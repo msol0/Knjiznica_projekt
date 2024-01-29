@@ -15,7 +15,6 @@ namespace Knjižnica.Abstract.Models
         public string Prezime { get; set; }
         public string Email { get; set; }
         public DateTime Datum_clanarine { get; set; }
-        public bool Aktivan { get; set; }
         public PravaEnums Pravo { get; set; }
     }
 }

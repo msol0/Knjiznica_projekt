@@ -64,7 +64,7 @@
             this.dgReservations.Name = "dgReservations";
             this.dgReservations.RowHeadersWidth = 51;
             this.dgReservations.RowTemplate.Height = 24;
-            this.dgReservations.Size = new System.Drawing.Size(539, 225);
+            this.dgReservations.Size = new System.Drawing.Size(606, 225);
             this.dgReservations.TabIndex = 10;
             // 
             // Control_MyReservations
@@ -76,7 +76,7 @@
             this.Controls.Add(this.lblMyReservation);
             this.Controls.Add(this.dgReservations);
             this.Name = "Control_MyReservations";
-            this.Size = new System.Drawing.Size(556, 342);
+            this.Size = new System.Drawing.Size(641, 342);
             ((System.ComponentModel.ISupportInitialize)(this.dgReservations)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

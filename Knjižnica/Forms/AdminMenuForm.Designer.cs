@@ -35,12 +35,12 @@
             this.tsBtnProfil = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btnAllUsers = new System.Windows.Forms.ToolStripButton();
-            this.btnRecords = new System.Windows.Forms.ToolStripButton();
-            this.btnBooks = new System.Windows.Forms.ToolStripButton();
-            this.panelAdmin = new System.Windows.Forms.Panel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnRecords = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnBooks = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.panelAdmin = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +55,7 @@
             this.tsBtnProfil});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 37);
+            this.toolStrip1.Size = new System.Drawing.Size(945, 37);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -106,7 +106,7 @@
             this.toolStripSeparator3});
             this.toolStrip2.Location = new System.Drawing.Point(0, 37);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(162, 413);
+            this.toolStrip2.Size = new System.Drawing.Size(162, 492);
             this.toolStrip2.TabIndex = 3;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -121,6 +121,11 @@
             this.btnAllUsers.Text = "Popis svih korisnika";
             this.btnAllUsers.Click += new System.EventHandler(this.btnAllUsers_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(159, 6);
+            // 
             // btnRecords
             // 
             this.btnRecords.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -131,6 +136,11 @@
             this.btnRecords.Size = new System.Drawing.Size(159, 27);
             this.btnRecords.Text = "Evidencija dugovanja";
             this.btnRecords.Click += new System.EventHandler(this.btnRecords_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(159, 6);
             // 
             // btnBooks
             // 
@@ -143,34 +153,24 @@
             this.btnBooks.Text = "Uređivanje građe";
             this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
-            // panelAdmin
-            // 
-            this.panelAdmin.Location = new System.Drawing.Point(175, 59);
-            this.panelAdmin.Name = "panelAdmin";
-            this.panelAdmin.Size = new System.Drawing.Size(599, 367);
-            this.panelAdmin.TabIndex = 4;
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(159, 6);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(159, 6);
             // 
-            // toolStripSeparator4
+            // panelAdmin
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(159, 6);
+            this.panelAdmin.Location = new System.Drawing.Point(175, 59);
+            this.panelAdmin.Name = "panelAdmin";
+            this.panelAdmin.Size = new System.Drawing.Size(758, 441);
+            this.panelAdmin.TabIndex = 4;
             // 
             // AdminMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(945, 529);
             this.Controls.Add(this.panelAdmin);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);

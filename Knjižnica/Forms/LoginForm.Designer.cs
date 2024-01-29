@@ -42,23 +42,23 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(211, 183);
+            this.txtEmail.Location = new System.Drawing.Point(245, 183);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 22);
+            this.txtEmail.Size = new System.Drawing.Size(229, 22);
             this.txtEmail.TabIndex = 16;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(211, 249);
+            this.txtPassword.Location = new System.Drawing.Point(245, 249);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(100, 22);
+            this.txtPassword.Size = new System.Drawing.Size(229, 22);
             this.txtPassword.TabIndex = 17;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(211, 118);
+            this.txtUsername.Location = new System.Drawing.Point(245, 118);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(100, 22);
+            this.txtUsername.Size = new System.Drawing.Size(229, 22);
             this.txtUsername.TabIndex = 15;
             // 
             // btnCancel
@@ -66,7 +66,7 @@
             this.btnCancel.AutoSize = true;
             this.btnCancel.Font = new System.Drawing.Font("Arial Unicode MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnCancel.ForeColor = System.Drawing.Color.Red;
-            this.btnCancel.Location = new System.Drawing.Point(677, 403);
+            this.btnCancel.Location = new System.Drawing.Point(835, 12);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 35);
             this.btnCancel.TabIndex = 14;
@@ -79,7 +79,7 @@
             this.btnLogin.AutoSize = true;
             this.btnLogin.BackColor = System.Drawing.Color.PaleGreen;
             this.btnLogin.Font = new System.Drawing.Font("Arial Unicode MS", 11F);
-            this.btnLogin.Location = new System.Drawing.Point(359, 340);
+            this.btnLogin.Location = new System.Drawing.Point(433, 340);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(81, 35);
             this.btnLogin.TabIndex = 13;
@@ -91,7 +91,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Arial Unicode MS", 12F);
-            this.lblEmail.Location = new System.Drawing.Point(25, 178);
+            this.lblEmail.Location = new System.Drawing.Point(59, 178);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(74, 26);
             this.lblEmail.TabIndex = 12;
@@ -101,7 +101,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Arial Unicode MS", 12F);
-            this.lblPassword.Location = new System.Drawing.Point(25, 244);
+            this.lblPassword.Location = new System.Drawing.Point(59, 244);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(86, 26);
             this.lblPassword.TabIndex = 11;
@@ -111,7 +111,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Arial Unicode MS", 12F);
-            this.lblUsername.Location = new System.Drawing.Point(25, 114);
+            this.lblUsername.Location = new System.Drawing.Point(59, 114);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(147, 26);
             this.lblUsername.TabIndex = 10;
@@ -122,7 +122,7 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Monotype Corsiva", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblWelcome.Location = new System.Drawing.Point(187, 35);
+            this.lblWelcome.Location = new System.Drawing.Point(267, 31);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(424, 40);
             this.lblWelcome.TabIndex = 9;
@@ -136,7 +136,7 @@
             this.BackColor = System.Drawing.Color.OldLace;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(945, 489);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);

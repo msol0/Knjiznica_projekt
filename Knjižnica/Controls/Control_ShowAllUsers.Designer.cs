@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.lblShowUsers = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgKorisnici = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgKorisnici)).BeginInit();
             this.SuspendLayout();
             // 
             // lblShowUsers
@@ -43,26 +43,28 @@
             this.lblShowUsers.TabIndex = 0;
             this.lblShowUsers.Text = "Popis svih korisnika";
             // 
-            // dataGridView1
+            // dgKorisnici
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 53);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(518, 298);
-            this.dataGridView1.TabIndex = 1;
+            this.dgKorisnici.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgKorisnici.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgKorisnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgKorisnici.Location = new System.Drawing.Point(16, 54);
+            this.dgKorisnici.Name = "dgKorisnici";
+            this.dgKorisnici.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgKorisnici.RowTemplate.Height = 24;
+            this.dgKorisnici.Size = new System.Drawing.Size(712, 298);
+            this.dgKorisnici.TabIndex = 1;
             // 
             // Control_ShowAllUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgKorisnici);
             this.Controls.Add(this.lblShowUsers);
             this.Name = "Control_ShowAllUsers";
-            this.Size = new System.Drawing.Size(626, 413);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Size = new System.Drawing.Size(745, 413);
+            ((System.ComponentModel.ISupportInitialize)(this.dgKorisnici)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -71,6 +73,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblShowUsers;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgKorisnici;
     }
 }

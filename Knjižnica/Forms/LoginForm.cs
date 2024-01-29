@@ -30,17 +30,15 @@ namespace Knjižnica
 
             if (Korisnik.Pravo == Abstract.Enums.PravaEnums.Korisnik) 
             {
-                MainMenuForm userMenuForm = new MainMenuForm(Korisnik);
-                userMenuForm.SakrijGumb();
-                userMenuForm.ShowDialog();
+                this.DialogResult = DialogResult.OK;
+                
             }
             else if(Korisnik.Pravo == Abstract.Enums.PravaEnums.Administrator)
             {
-                MainMenuForm userMenuForm = new MainMenuForm(Korisnik);
-                userMenuForm.ShowDialog();
+                this.DialogResult = DialogResult.OK;
             }
             else { 
-                MessageBox.Show("Neispravni podaci unosa!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
+                MessageBox.Show("Neispravan unos podataka!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
             }
         }
 

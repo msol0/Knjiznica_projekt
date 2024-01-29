@@ -43,7 +43,7 @@
             this.btnRent.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnRent.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold);
             this.btnRent.ForeColor = System.Drawing.Color.White;
-            this.btnRent.Location = new System.Drawing.Point(549, 264);
+            this.btnRent.Location = new System.Drawing.Point(593, 316);
             this.btnRent.Name = "btnRent";
             this.btnRent.Size = new System.Drawing.Size(87, 32);
             this.btnRent.TabIndex = 20;
@@ -55,7 +55,7 @@
             this.btnPretraga.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnPretraga.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnPretraga.Image = ((System.Drawing.Image)(resources.GetObject("btnPretraga.Image")));
-            this.btnPretraga.Location = new System.Drawing.Point(603, 9);
+            this.btnPretraga.Location = new System.Drawing.Point(647, 9);
             this.btnPretraga.Name = "btnPretraga";
             this.btnPretraga.Size = new System.Drawing.Size(33, 28);
             this.btnPretraga.TabIndex = 19;
@@ -63,7 +63,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(377, 9);
+            this.textBox1.Location = new System.Drawing.Point(421, 9);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(220, 22);
             this.textBox1.TabIndex = 18;
@@ -89,20 +89,21 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(631, 206);
+            this.dataGridView1.Size = new System.Drawing.Size(675, 232);
             this.dataGridView1.TabIndex = 16;
             // 
             // Control_SearchRent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.OldLace;
             this.Controls.Add(this.btnRent);
             this.Controls.Add(this.btnPretraga);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblAvailable);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Control_SearchRent";
-            this.Size = new System.Drawing.Size(653, 311);
+            this.Size = new System.Drawing.Size(708, 366);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

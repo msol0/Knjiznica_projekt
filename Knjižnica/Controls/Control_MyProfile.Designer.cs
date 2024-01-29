@@ -44,10 +44,8 @@
             this.btnSavePass = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNewPass = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblPassChange = new System.Windows.Forms.Label();
             this.tcMyProfile.SuspendLayout();
             this.TabPageInfoChange.SuspendLayout();
@@ -182,10 +180,8 @@
             this.TabPagePasswordChange.Controls.Add(this.btnSavePass);
             this.TabPagePasswordChange.Controls.Add(this.textBox7);
             this.TabPagePasswordChange.Controls.Add(this.textBox6);
-            this.TabPagePasswordChange.Controls.Add(this.textBox5);
             this.TabPagePasswordChange.Controls.Add(this.label1);
             this.TabPagePasswordChange.Controls.Add(this.lblNewPass);
-            this.TabPagePasswordChange.Controls.Add(this.label2);
             this.TabPagePasswordChange.Controls.Add(this.lblPassChange);
             this.TabPagePasswordChange.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.TabPagePasswordChange.Location = new System.Drawing.Point(4, 25);
@@ -201,7 +197,7 @@
             this.btnSavePass.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnSavePass.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold);
             this.btnSavePass.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSavePass.Location = new System.Drawing.Point(547, 204);
+            this.btnSavePass.Location = new System.Drawing.Point(487, 204);
             this.btnSavePass.Name = "btnSavePass";
             this.btnSavePass.Size = new System.Drawing.Size(151, 36);
             this.btnSavePass.TabIndex = 7;
@@ -210,29 +206,22 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(267, 204);
+            this.textBox7.Location = new System.Drawing.Point(267, 152);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(222, 30);
             this.textBox7.TabIndex = 6;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(267, 153);
+            this.textBox6.Location = new System.Drawing.Point(267, 101);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(222, 30);
             this.textBox6.TabIndex = 5;
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(267, 96);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(222, 30);
-            this.textBox5.TabIndex = 4;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 210);
+            this.label1.Location = new System.Drawing.Point(37, 158);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(209, 24);
             this.label1.TabIndex = 3;
@@ -242,21 +231,11 @@
             // 
             this.lblNewPass.AutoSize = true;
             this.lblNewPass.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.lblNewPass.Location = new System.Drawing.Point(37, 159);
+            this.lblNewPass.Location = new System.Drawing.Point(37, 107);
             this.lblNewPass.Name = "lblNewPass";
             this.lblNewPass.Size = new System.Drawing.Size(108, 24);
             this.lblNewPass.TabIndex = 2;
             this.lblNewPass.Text = "Nova lozinka:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.label2.Location = new System.Drawing.Point(37, 102);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Trenutna lozinka:";
             // 
             // lblPassChange
             // 
@@ -303,10 +282,8 @@
         private System.Windows.Forms.Button btnSavePass;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNewPass;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblPassChange;
     }
 }
