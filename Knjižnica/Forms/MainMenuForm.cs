@@ -56,7 +56,7 @@ namespace Knjižnica.Forms
         private void itemPosudi_Click(object sender, EventArgs e)
         {
             panelGlavni.Controls.Clear();
-            panelGlavni.Controls.Add(new Control_SearchRent());
+            panelGlavni.Controls.Add(new Control_SearchRent(_korisnik.Korisnicko_ime, _korisnik.ID));
         }
 
         

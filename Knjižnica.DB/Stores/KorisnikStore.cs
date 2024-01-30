@@ -10,33 +10,37 @@ namespace Knjižnica.DB.Stores
 {
     public class KorisnikStore
     {
-        SqlConnectionFactory _connectionManager = new SqlConnectionFactory();
+        
+        private KorisnikStore _korisnikStore;
         public Korisnik AutorizacijaKorisnika(string username, string password, string email)
         {
+            SqlConnectionFactory connectionManager = new SqlConnectionFactory();
             Korisnik korisnik = new Korisnik();
-            using (var connection = _connectionManager.GetNewConnection())
+            using (var connection = connectionManager.GetNewConnection())
             {
                 if (connection != null)
                 {
-                    string upit = String.Format("SELECT k.Ime, k.Prezime, k.Email, kp.ID_pravo FROM korisnik as k " +
-                "LEFT JOIN korisnik_prava AS kp ON k.ID = kp.ID_korisnik " +
-                "WHERE k.Korisnicko_ime = '" + username + "' " +
-                "AND k.Lozinka='" + password + "' " +
-                "AND k.Email='" + email + "'");
+                    string upit = String.Format("SELECT k.*, kp.ID_pravo FROM korisnik as k " +
+                        "LEFT JOIN korisnik_prava AS kp ON k.ID = kp.ID_korisnik " +
+                        "WHERE k.Korisnicko_ime = '" + username + "' " +
+                        "AND k.Lozinka='" + password + "' " +
+                        "AND k.Email='" + email + "'");
                     using (var command = new MySqlCommand(upit, connection))
                     {
                         using (var reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
+                                korisnik.ID = reader.GetInt32("ID");
                                 korisnik.Ime = reader.GetString("Ime");
                                 korisnik.Prezime = reader.GetString("Prezime");
                                 korisnik.Email = reader.GetString("Email");
+                                korisnik.Datum_clanarine = reader.GetDateTime("Datum_clanarine");
                                 korisnik.Pravo = (Abstract.Enums.PravaEnums)reader.GetInt32("ID_pravo");
                             }    
                         }
                     }
-                    _connectionManager.CloseConnection(connection);
+                    connectionManager.CloseConnection(connection);
                 }
             }
             return korisnik;
@@ -44,7 +48,7 @@ namespace Knjižnica.DB.Stores
 
         public List<Korisnik> GetKorisnik()
         {
-            var connectionManager = new SqlConnectionFactory();
+            SqlConnectionFactory connectionManager = new SqlConnectionFactory();
             List<Korisnik> userList = new List<Korisnik>();
 
             using (var connection = connectionManager.GetNewConnection())
