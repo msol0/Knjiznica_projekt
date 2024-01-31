@@ -22,11 +22,17 @@ namespace Knjižnica.Forms
             
             InitializeComponent();
             _korisnik = korisnik;
-            lblWelcome.Text= string.Format("Dobrodošao, {0} {1}!", korisnik.Ime, korisnik.Prezime);
+            panelGlavni.Controls.Clear();
+            panelGlavni.Controls.Add(new Control_Welcome(_korisnik.Ime, _korisnik.Prezime));
         }
         public void SakrijGumb()
         {
             btnAdmin.Visible = false;
+        }
+        public void SakrijUsluge()
+        {
+            tsbtnMenu.Enabled = false;
+            tsbtnProfil.Visible = false;
         }
 
         private void btnAdmin_Click(object sender, EventArgs e)
@@ -43,7 +49,7 @@ namespace Knjižnica.Forms
         private void tsbtnProfil_Click(object sender, EventArgs e)
         {
             panelGlavni.Controls.Clear();
-            panelGlavni.Controls.Add(new Control_MyProfile());
+            panelGlavni.Controls.Add(new Control_MyProfile(_korisnik));
         }
 
 
@@ -58,7 +64,5 @@ namespace Knjižnica.Forms
             panelGlavni.Controls.Clear();
             panelGlavni.Controls.Add(new Control_SearchRent(_korisnik.Korisnicko_ime, _korisnik.ID));
         }
-
-        
     }
 }

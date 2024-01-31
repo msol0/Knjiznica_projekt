@@ -22,13 +22,16 @@ namespace Knjižnica
             {
                 if (loginForm.ShowDialog() == DialogResult.OK)
                 {
+                    MainMenuForm userMenuForm = new MainMenuForm(loginForm.Korisnik);
                     if (loginForm.Korisnik.Pravo == Abstract.Enums.PravaEnums.Korisnik)
                     {
-                        MainMenuForm userMenuForm = new MainMenuForm(loginForm.Korisnik);
                         userMenuForm.SakrijGumb();
                         Application.Run(userMenuForm);
                     }
-                    else { Application.Run(new MainMenuForm(loginForm.Korisnik)); }
+                    else {
+                        userMenuForm.SakrijUsluge();
+                        Application.Run(userMenuForm);
+                    }
                 }
             }
         }

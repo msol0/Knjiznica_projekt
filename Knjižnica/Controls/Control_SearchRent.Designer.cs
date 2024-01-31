@@ -69,6 +69,7 @@
             this.txtTrazi.Name = "txtTrazi";
             this.txtTrazi.Size = new System.Drawing.Size(220, 22);
             this.txtTrazi.TabIndex = 18;
+            this.txtTrazi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTrazi_KeyDown);
             // 
             // lblAvailable
             // 

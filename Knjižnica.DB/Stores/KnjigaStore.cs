@@ -12,7 +12,7 @@ namespace Knjižnica.DB.Stores
     {
 
         private KnjigaStore _knjigaStore;
-        public List<Knjiga> GetKnjiga(int id_korisnika)
+        public List<Knjiga> DostupneKnjige(int id_korisnika)
         {
             SqlConnectionFactory connectionManager = new SqlConnectionFactory();
             List<Knjiga> bookList = new List<Knjiga>();
@@ -57,6 +57,52 @@ namespace Knjižnica.DB.Stores
                 connectionManager.CloseConnection(connection);
             }
             return bookList;
+        }
+
+        public List<Knjiga> SveKnjige()
+        {
+            {
+                SqlConnectionFactory connectionManager = new SqlConnectionFactory();
+                List<Knjiga> bookList = new List<Knjiga>();
+
+                using (var connection = connectionManager.GetNewConnection())
+                {
+                    if (connection != null)
+                    {
+                        string upit = String.Format("SELECT k.id as Id, k.naslov as Naslov, k.autor as Autor, k.izdavac as Izdavac," +
+                            " j.jezik as Jezik, g.naziv as Gradja, c.naziv as Kategorija " +
+                            "FROM knjiga k " +
+                            "JOIN jezik_izdanja j ON j.id = k.id_jezik " +
+                            "JOIN gradja g on g.id = k.id_gradja " +
+                            "JOIN kategorija c ON c.id = k.id_kategorija " +
+                            "LEFT JOIN rezervacija r ON r.id_knjige = k.id AND r.id_korisnika = @id_korisnika ");
+
+                        using (var command = new MySqlCommand(upit, connection))
+                        {
+                            using (var reader = command.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    Knjiga knjiga = new Knjiga()
+                                    {
+                                        ID = reader.GetInt32("Id"),
+                                        Naslov = reader.GetString("Naslov"),
+                                        Autor = reader.GetString("Autor"),
+                                        Izdavac = reader.GetString("Izdavac"),
+                                        Jezik = reader.GetString("Jezik"),
+                                        Gradja = reader.GetString("Gradja"),
+                                        Kategorija = reader.GetString("Kategorija")
+                                    };
+
+                                    bookList.Add(knjiga);
+                                }
+                            }
+                        }
+                    }
+                    connectionManager.CloseConnection(connection);
+                }
+                return bookList;
+            }
         }
 
         public void PosudiKnjigu(int id_korisnika, int id_knjige)

@@ -30,7 +30,7 @@ namespace Knjižnica.Controls
         }
         private void Init()
         {
-            dgDostupneKnjige.DataSource = _knjigastore.GetKnjiga(id);
+            dgDostupneKnjige.DataSource = _knjigastore.DostupneKnjige(id);
             dgDostupneKnjige.Columns[3].Visible = false;
             dgDostupneKnjige.Columns[8].Visible = false;
             dgDostupneKnjige.Columns[9].Visible = false;
@@ -76,21 +76,34 @@ namespace Knjižnica.Controls
                     connectionManager.CloseConnection(connection);
                 }
                 _knjigastore.PosudiKnjigu(id, id_knjiga);
-                dgDostupneKnjige.DataSource = _knjigastore.GetKnjiga(id);
+                dgDostupneKnjige.DataSource = _knjigastore.DostupneKnjige(id);
             }
         }
 
         private void btnPretraga_Click(object sender, EventArgs e)
         {
-            var knjige = _knjigastore.GetKnjiga(id);
+            Pretraga();
+        }
+
+        private void Pretraga()
+        {
+            var knjige = _knjigastore.DostupneKnjige(id);
 
             knjige = knjige.Where(x => x.Naslov.ToUpper().Contains(txtTrazi.Text.ToUpper())
-                || x.Autor.ToUpper().Contains(txtTrazi.Text.ToUpper()) 
+                || x.Autor.ToUpper().Contains(txtTrazi.Text.ToUpper())
                 || x.Jezik.ToUpper().Contains(txtTrazi.Text.ToUpper())
                 || x.Izdavac.ToUpper().Contains(txtTrazi.Text.ToUpper())
                 || x.Kategorija.ToUpper().Contains(txtTrazi.Text.ToUpper())).ToList();
 
             dgDostupneKnjige.DataSource = knjige;
+        }
+
+        private void txtTrazi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Pretraga();
+            }
         }
     }
 }

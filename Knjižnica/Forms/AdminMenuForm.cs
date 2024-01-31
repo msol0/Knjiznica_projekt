@@ -14,9 +14,11 @@ namespace Knjižnica.Forms
 {
     public partial class AdminMenuForm : Form
     {
+        private Korisnik _korisnik;
         public AdminMenuForm(Korisnik korisnik)
         {
             InitializeComponent();
+            _korisnik = korisnik;
 
         }
 
@@ -41,12 +43,12 @@ namespace Knjižnica.Forms
         private void tsBtnProfil_Click(object sender, EventArgs e)
         {
             panelAdmin.Controls.Clear();
-            panelAdmin.Controls.Add(new Control_MyProfile());
+            panelAdmin.Controls.Add(new Control_MyProfile(_korisnik));
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            this.Close();
+          Application.Exit();
         }
     }
 }

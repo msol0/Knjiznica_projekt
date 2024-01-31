@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Knjižnica.DB.Stores
 {
@@ -32,10 +33,29 @@ namespace Knjižnica.DB.Stores
                             while (reader.Read())
                             {
                                 korisnik.ID = reader.GetInt32("ID");
+                                korisnik.Korisnicko_ime = reader.GetString("Korisnicko_ime");
                                 korisnik.Ime = reader.GetString("Ime");
                                 korisnik.Prezime = reader.GetString("Prezime");
                                 korisnik.Email = reader.GetString("Email");
-                                korisnik.Datum_clanarine = reader.GetDateTime("Datum_clanarine");
+
+                                if (!reader.IsDBNull(reader.GetOrdinal("Datum_clanarine")))
+                                {
+                                    MySqlDateTime mySqlDateTime = reader.GetMySqlDateTime("Datum_clanarine");
+
+                                    if (mySqlDateTime.IsValidDateTime)
+                                    {
+                                        korisnik.Datum_clanarine = mySqlDateTime.GetDateTime();
+                                    }
+                                    else
+                                    {
+                                        korisnik.Datum_clanarine = DateTime.MinValue;
+                                    }
+                                }
+                                else
+                                {
+                                    korisnik.Datum_clanarine = DateTime.MinValue;
+                                }
+
                                 korisnik.Pravo = (Abstract.Enums.PravaEnums)reader.GetInt32("ID_pravo");
                             }    
                         }
@@ -86,6 +106,73 @@ namespace Knjižnica.DB.Stores
             }
             return userList.OrderBy(korisnik => korisnik.Prezime).ToList();
         }
+
+        public void AzurirajPodatke(Korisnik korisnik)
+        {
+            var connectionManager = new SqlConnectionFactory();
+
+            using (var connection = connectionManager.GetNewConnection())
+            {
+                if (connection != null)
+                {
+                    string upit = String.Format("UPDATE korisnik SET Korisnicko_ime = @Korisnicko_ime, Ime = @Ime, Prezime = @Prezime, Email = @Email WHERE id = @Id");
+
+                    using (var command = new MySqlCommand(upit, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", korisnik.ID);
+                        command.Parameters.AddWithValue("@Korisnicko_ime", korisnik.Korisnicko_ime);
+                        command.Parameters.AddWithValue("@Ime", korisnik.Ime);
+                        command.Parameters.AddWithValue("@Prezime", korisnik.Prezime);
+                        command.Parameters.AddWithValue("@Email", korisnik.Email);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    connectionManager.CloseConnection(connection);
+                }
+            }
+        }
+
+        public bool ProvjeraLozinke(string unos, int id_korisnika)
+        {
+            var connectionManager = new SqlConnectionFactory();
+            bool count = false;
+
+            using (var connection = connectionManager.GetNewConnection())
+            {
+                if (connection != null)
+                {
+                    string upit = String.Format("SELECT COUNT(*) FROM korisnik WHERE id = '" + id_korisnika + " ' " + " AND lozinka = '" + unos + "'");
+
+                    using (var command = new MySqlCommand(upit, connection))
+                    {
+                        int result = Convert.ToInt32(command.ExecuteScalar());
+                        count = result > 0;
+                    }
+                }
+                connectionManager.CloseConnection(connection);
+            }
+            return count;
+        }
+        public void PromjenaLozinke(string novaLozinka, int id_korisnika){
+            var connectionManager = new SqlConnectionFactory();
+            using(var connection = connectionManager.GetNewConnection()) 
+            { 
+                if (connection != null) 
+                {
+                    string upit = String.Format("UPDATE korisnik SET Lozinka = @Lozinka WHERE id = @id_korisnika");
+
+                    using(var command = new MySqlCommand(upit, connection))
+                    {
+                        command.Parameters.AddWithValue("@Lozinka", novaLozinka);
+                        command.Parameters.AddWithValue("@id_korisnika", id_korisnika);
+
+                        command.ExecuteNonQuery();
+                    }
+                    connectionManager.CloseConnection(connection);
+                } 
+            }
+        }
     }
-    
+
 }

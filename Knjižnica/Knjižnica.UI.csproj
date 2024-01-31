@@ -113,6 +113,12 @@
     <Compile Include="Controls\Control_ShowAllUsers.Designer.cs">
       <DependentUpon>Control_ShowAllUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Control_Welcome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Control_Welcome.Designer.cs">
+      <DependentUpon>Control_Welcome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddEditBooksForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,12 +143,6 @@
     <Compile Include="Forms\MainMenuForm.Designer.cs">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MyProfileForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MyProfileForm.Designer.cs">
-      <DependentUpon>MyProfileForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\Control_EditBooks.resx">
@@ -163,6 +163,9 @@
     <EmbeddedResource Include="Controls\Control_ShowAllUsers.resx">
       <DependentUpon>Control_ShowAllUsers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Control_Welcome.resx">
+      <DependentUpon>Control_Welcome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddEditBooksForm.resx">
       <DependentUpon>AddEditBooksForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,9 +177,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenuForm.resx">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MyProfileForm.resx">
-      <DependentUpon>MyProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

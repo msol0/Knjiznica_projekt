@@ -30,24 +30,26 @@
         {
             this.btnSpremi = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
-            this.txtTelefon = new System.Windows.Forms.TextBox();
-            this.txtAdresa = new System.Windows.Forms.TextBox();
-            this.lblPublisher = new System.Windows.Forms.Label();
-            this.lblPublishPlace = new System.Windows.Forms.Label();
-            this.txtAuthor = new System.Windows.Forms.TextBox();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblPrezime = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.lblLanguage = new System.Windows.Forms.Label();
-            this.lblCategory = new System.Windows.Forms.Label();
-            this.lblAmount = new System.Windows.Forms.Label();
-            this.lblType = new System.Windows.Forms.Label();
-            this.lblAvailability = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.txtIzdavac = new System.Windows.Forms.TextBox();
+            this.txtMjestoIzdanja = new System.Windows.Forms.TextBox();
+            this.lblIzdavac = new System.Windows.Forms.Label();
+            this.lblMjestoIzdanja = new System.Windows.Forms.Label();
+            this.txtAutor = new System.Windows.Forms.TextBox();
+            this.lblNaslov = new System.Windows.Forms.Label();
+            this.lblAutor = new System.Windows.Forms.Label();
+            this.txtNaslov = new System.Windows.Forms.TextBox();
+            this.lblJezik = new System.Windows.Forms.Label();
+            this.lblZanr = new System.Windows.Forms.Label();
+            this.lblKolicina = new System.Windows.Forms.Label();
+            this.lblGradja = new System.Windows.Forms.Label();
+            this.lblDostupnost = new System.Windows.Forms.Label();
+            this.cbJezik = new System.Windows.Forms.ComboBox();
+            this.cbZanr = new System.Windows.Forms.ComboBox();
+            this.cbGradja = new System.Windows.Forms.ComboBox();
+            this.numKolicina = new System.Windows.Forms.NumericUpDown();
+            this.numDostupnost = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numKolicina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDostupnost)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSpremi
@@ -82,197 +84,205 @@
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = false;
             // 
-            // txtTelefon
+            // txtIzdavac
             // 
-            this.txtTelefon.Location = new System.Drawing.Point(217, 185);
-            this.txtTelefon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(221, 22);
-            this.txtTelefon.TabIndex = 40;
+            this.txtIzdavac.Location = new System.Drawing.Point(217, 185);
+            this.txtIzdavac.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIzdavac.Name = "txtIzdavac";
+            this.txtIzdavac.Size = new System.Drawing.Size(221, 22);
+            this.txtIzdavac.TabIndex = 4;
             // 
-            // txtAdresa
+            // txtMjestoIzdanja
             // 
-            this.txtAdresa.Location = new System.Drawing.Point(217, 135);
-            this.txtAdresa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAdresa.Name = "txtAdresa";
-            this.txtAdresa.Size = new System.Drawing.Size(221, 22);
-            this.txtAdresa.TabIndex = 39;
+            this.txtMjestoIzdanja.Location = new System.Drawing.Point(217, 135);
+            this.txtMjestoIzdanja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMjestoIzdanja.Name = "txtMjestoIzdanja";
+            this.txtMjestoIzdanja.Size = new System.Drawing.Size(221, 22);
+            this.txtMjestoIzdanja.TabIndex = 3;
             // 
-            // lblPublisher
+            // lblIzdavac
             // 
-            this.lblPublisher.AutoSize = true;
-            this.lblPublisher.Font = new System.Drawing.Font("Arial Narrow", 13F);
-            this.lblPublisher.Location = new System.Drawing.Point(53, 181);
-            this.lblPublisher.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPublisher.Name = "lblPublisher";
-            this.lblPublisher.Size = new System.Drawing.Size(78, 26);
-            this.lblPublisher.TabIndex = 38;
-            this.lblPublisher.Text = "Izdavač:";
+            this.lblIzdavac.AutoSize = true;
+            this.lblIzdavac.Font = new System.Drawing.Font("Arial Narrow", 13F);
+            this.lblIzdavac.Location = new System.Drawing.Point(53, 181);
+            this.lblIzdavac.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIzdavac.Name = "lblIzdavac";
+            this.lblIzdavac.Size = new System.Drawing.Size(78, 26);
+            this.lblIzdavac.TabIndex = 38;
+            this.lblIzdavac.Text = "Izdavač:";
             // 
-            // lblPublishPlace
+            // lblMjestoIzdanja
             // 
-            this.lblPublishPlace.AutoSize = true;
-            this.lblPublishPlace.Font = new System.Drawing.Font("Arial Narrow", 13F);
-            this.lblPublishPlace.Location = new System.Drawing.Point(53, 131);
-            this.lblPublishPlace.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPublishPlace.Name = "lblPublishPlace";
-            this.lblPublishPlace.Size = new System.Drawing.Size(151, 26);
-            this.lblPublishPlace.TabIndex = 37;
-            this.lblPublishPlace.Text = "Mjesto izdavanja:";
+            this.lblMjestoIzdanja.AutoSize = true;
+            this.lblMjestoIzdanja.Font = new System.Drawing.Font("Arial Narrow", 13F);
+            this.lblMjestoIzdanja.Location = new System.Drawing.Point(53, 131);
+            this.lblMjestoIzdanja.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMjestoIzdanja.Name = "lblMjestoIzdanja";
+            this.lblMjestoIzdanja.Size = new System.Drawing.Size(151, 26);
+            this.lblMjestoIzdanja.TabIndex = 37;
+            this.lblMjestoIzdanja.Text = "Mjesto izdavanja:";
             // 
-            // txtAuthor
+            // txtAutor
             // 
-            this.txtAuthor.Location = new System.Drawing.Point(217, 84);
-            this.txtAuthor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(221, 22);
-            this.txtAuthor.TabIndex = 36;
+            this.txtAutor.Location = new System.Drawing.Point(217, 84);
+            this.txtAutor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAutor.Name = "txtAutor";
+            this.txtAutor.Size = new System.Drawing.Size(221, 22);
+            this.txtAutor.TabIndex = 2;
             // 
-            // lblTitle
+            // lblNaslov
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Arial Narrow", 13F);
-            this.lblTitle.Location = new System.Drawing.Point(53, 33);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(72, 26);
-            this.lblTitle.TabIndex = 35;
-            this.lblTitle.Text = "Naslov:";
+            this.lblNaslov.AutoSize = true;
+            this.lblNaslov.Font = new System.Drawing.Font("Arial Narrow", 13F);
+            this.lblNaslov.Location = new System.Drawing.Point(53, 33);
+            this.lblNaslov.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNaslov.Name = "lblNaslov";
+            this.lblNaslov.Size = new System.Drawing.Size(72, 26);
+            this.lblNaslov.TabIndex = 35;
+            this.lblNaslov.Text = "Naslov:";
             // 
-            // lblPrezime
+            // lblAutor
             // 
-            this.lblPrezime.AutoSize = true;
-            this.lblPrezime.Font = new System.Drawing.Font("Arial Narrow", 13F);
-            this.lblPrezime.Location = new System.Drawing.Point(53, 80);
-            this.lblPrezime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPrezime.Name = "lblPrezime";
-            this.lblPrezime.Size = new System.Drawing.Size(59, 26);
-            this.lblPrezime.TabIndex = 34;
-            this.lblPrezime.Text = "Autor:";
+            this.lblAutor.AutoSize = true;
+            this.lblAutor.Font = new System.Drawing.Font("Arial Narrow", 13F);
+            this.lblAutor.Location = new System.Drawing.Point(53, 80);
+            this.lblAutor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAutor.Name = "lblAutor";
+            this.lblAutor.Size = new System.Drawing.Size(59, 26);
+            this.lblAutor.TabIndex = 34;
+            this.lblAutor.Text = "Autor:";
             // 
-            // txtTitle
+            // txtNaslov
             // 
-            this.txtTitle.Location = new System.Drawing.Point(217, 37);
-            this.txtTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(221, 22);
-            this.txtTitle.TabIndex = 33;
+            this.txtNaslov.Location = new System.Drawing.Point(217, 38);
+            this.txtNaslov.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNaslov.Name = "txtNaslov";
+            this.txtNaslov.Size = new System.Drawing.Size(221, 22);
+            this.txtNaslov.TabIndex = 1;
             // 
-            // lblLanguage
+            // lblJezik
             // 
-            this.lblLanguage.AutoSize = true;
-            this.lblLanguage.Font = new System.Drawing.Font("Arial Narrow", 13F);
-            this.lblLanguage.Location = new System.Drawing.Point(53, 227);
-            this.lblLanguage.Name = "lblLanguage";
-            this.lblLanguage.Size = new System.Drawing.Size(58, 26);
-            this.lblLanguage.TabIndex = 43;
-            this.lblLanguage.Text = "Jezik:";
+            this.lblJezik.AutoSize = true;
+            this.lblJezik.Font = new System.Drawing.Font("Arial Narrow", 13F);
+            this.lblJezik.Location = new System.Drawing.Point(53, 227);
+            this.lblJezik.Name = "lblJezik";
+            this.lblJezik.Size = new System.Drawing.Size(58, 26);
+            this.lblJezik.TabIndex = 43;
+            this.lblJezik.Text = "Jezik:";
             // 
-            // lblCategory
+            // lblZanr
             // 
-            this.lblCategory.AutoSize = true;
-            this.lblCategory.Font = new System.Drawing.Font("Arial Narrow", 13F);
-            this.lblCategory.Location = new System.Drawing.Point(53, 277);
-            this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(54, 26);
-            this.lblCategory.TabIndex = 44;
-            this.lblCategory.Text = "Žanr:";
+            this.lblZanr.AutoSize = true;
+            this.lblZanr.Font = new System.Drawing.Font("Arial Narrow", 13F);
+            this.lblZanr.Location = new System.Drawing.Point(53, 277);
+            this.lblZanr.Name = "lblZanr";
+            this.lblZanr.Size = new System.Drawing.Size(54, 26);
+            this.lblZanr.TabIndex = 44;
+            this.lblZanr.Text = "Žanr:";
             // 
-            // lblAmount
+            // lblKolicina
             // 
-            this.lblAmount.AutoSize = true;
-            this.lblAmount.Font = new System.Drawing.Font("Arial Narrow", 13F);
-            this.lblAmount.Location = new System.Drawing.Point(53, 360);
-            this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(80, 26);
-            this.lblAmount.TabIndex = 45;
-            this.lblAmount.Text = "Količina:";
+            this.lblKolicina.AutoSize = true;
+            this.lblKolicina.Font = new System.Drawing.Font("Arial Narrow", 13F);
+            this.lblKolicina.Location = new System.Drawing.Point(53, 360);
+            this.lblKolicina.Name = "lblKolicina";
+            this.lblKolicina.Size = new System.Drawing.Size(80, 26);
+            this.lblKolicina.TabIndex = 45;
+            this.lblKolicina.Text = "Količina:";
             // 
-            // lblType
+            // lblGradja
             // 
-            this.lblType.AutoSize = true;
-            this.lblType.Font = new System.Drawing.Font("Arial Narrow", 13F);
-            this.lblType.Location = new System.Drawing.Point(53, 318);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(111, 26);
-            this.lblType.TabIndex = 46;
-            this.lblType.Text = "Vrsta građe:";
+            this.lblGradja.AutoSize = true;
+            this.lblGradja.Font = new System.Drawing.Font("Arial Narrow", 13F);
+            this.lblGradja.Location = new System.Drawing.Point(53, 318);
+            this.lblGradja.Name = "lblGradja";
+            this.lblGradja.Size = new System.Drawing.Size(111, 26);
+            this.lblGradja.TabIndex = 46;
+            this.lblGradja.Text = "Vrsta građe:";
             // 
-            // lblAvailability
+            // lblDostupnost
             // 
-            this.lblAvailability.AutoSize = true;
-            this.lblAvailability.Font = new System.Drawing.Font("Arial Narrow", 13F);
-            this.lblAvailability.Location = new System.Drawing.Point(53, 403);
-            this.lblAvailability.Name = "lblAvailability";
-            this.lblAvailability.Size = new System.Drawing.Size(108, 26);
-            this.lblAvailability.TabIndex = 47;
-            this.lblAvailability.Text = "Dostupnost:";
+            this.lblDostupnost.AutoSize = true;
+            this.lblDostupnost.Font = new System.Drawing.Font("Arial Narrow", 13F);
+            this.lblDostupnost.Location = new System.Drawing.Point(53, 403);
+            this.lblDostupnost.Name = "lblDostupnost";
+            this.lblDostupnost.Size = new System.Drawing.Size(108, 26);
+            this.lblDostupnost.TabIndex = 47;
+            this.lblDostupnost.Text = "Dostupnost:";
             // 
-            // textBox4
+            // cbJezik
             // 
-            this.textBox4.Location = new System.Drawing.Point(217, 364);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(221, 22);
-            this.textBox4.TabIndex = 51;
+            this.cbJezik.FormattingEnabled = true;
+            this.cbJezik.Location = new System.Drawing.Point(217, 228);
+            this.cbJezik.Name = "cbJezik";
+            this.cbJezik.Size = new System.Drawing.Size(221, 24);
+            this.cbJezik.TabIndex = 5;
             // 
-            // textBox5
+            // cbZanr
             // 
-            this.textBox5.Location = new System.Drawing.Point(217, 407);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(221, 22);
-            this.textBox5.TabIndex = 52;
+            this.cbZanr.FormattingEnabled = true;
+            this.cbZanr.Location = new System.Drawing.Point(217, 277);
+            this.cbZanr.Name = "cbZanr";
+            this.cbZanr.Size = new System.Drawing.Size(221, 24);
+            this.cbZanr.TabIndex = 6;
             // 
-            // comboBox1
+            // cbGradja
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(217, 228);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(221, 24);
-            this.comboBox1.TabIndex = 53;
+            this.cbGradja.FormattingEnabled = true;
+            this.cbGradja.Location = new System.Drawing.Point(217, 318);
+            this.cbGradja.Name = "cbGradja";
+            this.cbGradja.Size = new System.Drawing.Size(221, 24);
+            this.cbGradja.TabIndex = 7;
             // 
-            // comboBox2
+            // numKolicina
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(217, 277);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(221, 24);
-            this.comboBox2.TabIndex = 54;
+            this.numKolicina.Location = new System.Drawing.Point(217, 364);
+            this.numKolicina.Name = "numKolicina";
+            this.numKolicina.Size = new System.Drawing.Size(52, 22);
+            this.numKolicina.TabIndex = 48;
             // 
-            // comboBox3
+            // numDostupnost
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(217, 318);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(221, 24);
-            this.comboBox3.TabIndex = 55;
+            this.numDostupnost.Location = new System.Drawing.Point(217, 409);
+            this.numDostupnost.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numDostupnost.Name = "numDostupnost";
+            this.numDostupnost.Size = new System.Drawing.Size(52, 22);
+            this.numDostupnost.TabIndex = 49;
             // 
             // AddEditBooksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(541, 522);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.lblAvailability);
-            this.Controls.Add(this.lblType);
-            this.Controls.Add(this.lblAmount);
-            this.Controls.Add(this.lblCategory);
-            this.Controls.Add(this.lblLanguage);
+            this.Controls.Add(this.numDostupnost);
+            this.Controls.Add(this.numKolicina);
+            this.Controls.Add(this.cbGradja);
+            this.Controls.Add(this.cbZanr);
+            this.Controls.Add(this.cbJezik);
+            this.Controls.Add(this.lblDostupnost);
+            this.Controls.Add(this.lblGradja);
+            this.Controls.Add(this.lblKolicina);
+            this.Controls.Add(this.lblZanr);
+            this.Controls.Add(this.lblJezik);
             this.Controls.Add(this.btnSpremi);
             this.Controls.Add(this.btnOdustani);
-            this.Controls.Add(this.txtTelefon);
-            this.Controls.Add(this.txtAdresa);
-            this.Controls.Add(this.lblPublisher);
-            this.Controls.Add(this.lblPublishPlace);
-            this.Controls.Add(this.txtAuthor);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.lblPrezime);
-            this.Controls.Add(this.txtTitle);
+            this.Controls.Add(this.txtIzdavac);
+            this.Controls.Add(this.txtMjestoIzdanja);
+            this.Controls.Add(this.lblIzdavac);
+            this.Controls.Add(this.lblMjestoIzdanja);
+            this.Controls.Add(this.txtAutor);
+            this.Controls.Add(this.lblNaslov);
+            this.Controls.Add(this.lblAutor);
+            this.Controls.Add(this.txtNaslov);
             this.Name = "AddEditBooksForm";
             this.Text = "AddEditBooksForm";
+            ((System.ComponentModel.ISupportInitialize)(this.numKolicina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDostupnost)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,23 +292,23 @@
 
         private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.Button btnOdustani;
-        private System.Windows.Forms.TextBox txtTelefon;
-        private System.Windows.Forms.TextBox txtAdresa;
-        private System.Windows.Forms.Label lblPublisher;
-        private System.Windows.Forms.Label lblPublishPlace;
-        private System.Windows.Forms.TextBox txtAuthor;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblPrezime;
-        private System.Windows.Forms.TextBox txtTitle;
-        private System.Windows.Forms.Label lblLanguage;
-        private System.Windows.Forms.Label lblCategory;
-        private System.Windows.Forms.Label lblAmount;
-        private System.Windows.Forms.Label lblType;
-        private System.Windows.Forms.Label lblAvailability;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TextBox txtIzdavac;
+        private System.Windows.Forms.TextBox txtMjestoIzdanja;
+        private System.Windows.Forms.Label lblIzdavac;
+        private System.Windows.Forms.Label lblMjestoIzdanja;
+        private System.Windows.Forms.TextBox txtAutor;
+        private System.Windows.Forms.Label lblNaslov;
+        private System.Windows.Forms.Label lblAutor;
+        private System.Windows.Forms.TextBox txtNaslov;
+        private System.Windows.Forms.Label lblJezik;
+        private System.Windows.Forms.Label lblZanr;
+        private System.Windows.Forms.Label lblKolicina;
+        private System.Windows.Forms.Label lblGradja;
+        private System.Windows.Forms.Label lblDostupnost;
+        private System.Windows.Forms.ComboBox cbJezik;
+        private System.Windows.Forms.ComboBox cbZanr;
+        private System.Windows.Forms.ComboBox cbGradja;
+        private System.Windows.Forms.NumericUpDown numKolicina;
+        private System.Windows.Forms.NumericUpDown numDostupnost;
     }
 }

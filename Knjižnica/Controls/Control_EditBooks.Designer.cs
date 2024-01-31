@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgKnjige = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgKnjige)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgKnjige
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(51, 66);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(465, 278);
-            this.dataGridView1.TabIndex = 0;
+            this.dgKnjige.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgKnjige.Location = new System.Drawing.Point(51, 66);
+            this.dgKnjige.Name = "dgKnjige";
+            this.dgKnjige.RowHeadersWidth = 51;
+            this.dgKnjige.RowTemplate.Height = 24;
+            this.dgKnjige.Size = new System.Drawing.Size(465, 278);
+            this.dgKnjige.TabIndex = 0;
             // 
             // btnAdd
             // 
@@ -57,6 +57,7 @@
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Dodaj građu";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -70,6 +71,7 @@
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Ažuriraj građu";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -83,6 +85,7 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Obriši građu";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // Control_EditBooks
             // 
@@ -92,10 +95,10 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgKnjige);
             this.Name = "Control_EditBooks";
             this.Size = new System.Drawing.Size(586, 369);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgKnjige)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,7 +106,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgKnjige;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;

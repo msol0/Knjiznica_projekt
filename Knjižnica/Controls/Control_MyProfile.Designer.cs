@@ -30,20 +30,22 @@
         {
             this.tcMyProfile = new System.Windows.Forms.TabControl();
             this.TabPageInfoChange = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.lblNaslov = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtSurname = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblSurname = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.TabPagePasswordChange = new System.Windows.Forms.TabPage();
+            this.txtOldPass = new System.Windows.Forms.TextBox();
+            this.lblOldPass = new System.Windows.Forms.Label();
             this.btnSavePass = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtRepeatPass = new System.Windows.Forms.TextBox();
+            this.txtNewPass = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNewPass = new System.Windows.Forms.Label();
             this.lblPassChange = new System.Windows.Forms.Label();
@@ -65,16 +67,16 @@
             // TabPageInfoChange
             // 
             this.TabPageInfoChange.BackColor = System.Drawing.Color.OldLace;
-            this.TabPageInfoChange.Controls.Add(this.button1);
+            this.TabPageInfoChange.Controls.Add(this.btnSave);
             this.TabPageInfoChange.Controls.Add(this.lblNaslov);
-            this.TabPageInfoChange.Controls.Add(this.textBox4);
+            this.TabPageInfoChange.Controls.Add(this.txtEmail);
             this.TabPageInfoChange.Controls.Add(this.lblUsername);
-            this.TabPageInfoChange.Controls.Add(this.textBox3);
+            this.TabPageInfoChange.Controls.Add(this.txtSurname);
             this.TabPageInfoChange.Controls.Add(this.lblName);
-            this.TabPageInfoChange.Controls.Add(this.textBox2);
+            this.TabPageInfoChange.Controls.Add(this.txtName);
             this.TabPageInfoChange.Controls.Add(this.lblEmail);
             this.TabPageInfoChange.Controls.Add(this.lblSurname);
-            this.TabPageInfoChange.Controls.Add(this.textBox1);
+            this.TabPageInfoChange.Controls.Add(this.txtUsername);
             this.TabPageInfoChange.Font = new System.Drawing.Font("Arial Narrow", 8F);
             this.TabPageInfoChange.Location = new System.Drawing.Point(4, 25);
             this.TabPageInfoChange.Name = "TabPageInfoChange";
@@ -83,18 +85,19 @@
             this.TabPageInfoChange.TabIndex = 0;
             this.TabPageInfoChange.Text = "Promjena podataka";
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(299, 227);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 39);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Spremi promjene";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSave.AutoSize = true;
+            this.btnSave.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnSave.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSave.Location = new System.Drawing.Point(313, 211);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(168, 39);
+            this.btnSave.TabIndex = 26;
+            this.btnSave.Text = "Spremi promjene";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblNaslov
             // 
@@ -102,16 +105,17 @@
             this.lblNaslov.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Underline);
             this.lblNaslov.Location = new System.Drawing.Point(32, 40);
             this.lblNaslov.Name = "lblNaslov";
-            this.lblNaslov.Size = new System.Drawing.Size(141, 26);
+            this.lblNaslov.Size = new System.Drawing.Size(136, 26);
             this.lblNaslov.TabIndex = 17;
-            this.lblNaslov.Text = "Uredi svoj profil:";
+            this.lblNaslov.Text = "Uredi svoj profil";
             // 
-            // textBox4
+            // txtEmail
             // 
-            this.textBox4.Location = new System.Drawing.Point(543, 156);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(169, 23);
-            this.textBox4.TabIndex = 25;
+            this.txtEmail.Location = new System.Drawing.Point(543, 156);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(169, 23);
+            this.txtEmail.TabIndex = 4;
+            this.txtEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEmail_KeyDown);
             // 
             // lblUsername
             // 
@@ -123,12 +127,12 @@
             this.lblUsername.TabIndex = 18;
             this.lblUsername.Text = "Korisničko ime:";
             // 
-            // textBox3
+            // txtSurname
             // 
-            this.textBox3.Location = new System.Drawing.Point(543, 103);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(169, 23);
-            this.textBox3.TabIndex = 24;
+            this.txtSurname.Location = new System.Drawing.Point(543, 103);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(169, 23);
+            this.txtSurname.TabIndex = 3;
             // 
             // lblName
             // 
@@ -140,18 +144,18 @@
             this.lblName.TabIndex = 19;
             this.lblName.Text = "Ime:";
             // 
-            // textBox2
+            // txtName
             // 
-            this.textBox2.Location = new System.Drawing.Point(184, 157);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 23);
-            this.textBox2.TabIndex = 23;
+            this.txtName.Location = new System.Drawing.Point(184, 157);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(169, 23);
+            this.txtName.TabIndex = 2;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.lblEmail.Location = new System.Drawing.Point(392, 156);
+            this.lblEmail.Location = new System.Drawing.Point(452, 156);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(61, 24);
             this.lblEmail.TabIndex = 21;
@@ -161,25 +165,27 @@
             // 
             this.lblSurname.AutoSize = true;
             this.lblSurname.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.lblSurname.Location = new System.Drawing.Point(392, 103);
+            this.lblSurname.Location = new System.Drawing.Point(452, 103);
             this.lblSurname.Name = "lblSurname";
             this.lblSurname.Size = new System.Drawing.Size(75, 24);
             this.lblSurname.TabIndex = 20;
             this.lblSurname.Text = "Prezime:";
             // 
-            // textBox1
+            // txtUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(184, 103);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 23);
-            this.textBox1.TabIndex = 22;
+            this.txtUsername.Location = new System.Drawing.Point(184, 104);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(169, 23);
+            this.txtUsername.TabIndex = 1;
             // 
             // TabPagePasswordChange
             // 
             this.TabPagePasswordChange.BackColor = System.Drawing.Color.OldLace;
+            this.TabPagePasswordChange.Controls.Add(this.txtOldPass);
+            this.TabPagePasswordChange.Controls.Add(this.lblOldPass);
             this.TabPagePasswordChange.Controls.Add(this.btnSavePass);
-            this.TabPagePasswordChange.Controls.Add(this.textBox7);
-            this.TabPagePasswordChange.Controls.Add(this.textBox6);
+            this.TabPagePasswordChange.Controls.Add(this.txtRepeatPass);
+            this.TabPagePasswordChange.Controls.Add(this.txtNewPass);
             this.TabPagePasswordChange.Controls.Add(this.label1);
             this.TabPagePasswordChange.Controls.Add(this.lblNewPass);
             this.TabPagePasswordChange.Controls.Add(this.lblPassChange);
@@ -191,37 +197,56 @@
             this.TabPagePasswordChange.TabIndex = 1;
             this.TabPagePasswordChange.Text = "Promjena lozinke";
             // 
+            // txtOldPass
+            // 
+            this.txtOldPass.Location = new System.Drawing.Point(267, 86);
+            this.txtOldPass.Name = "txtOldPass";
+            this.txtOldPass.Size = new System.Drawing.Size(222, 30);
+            this.txtOldPass.TabIndex = 1;
+            // 
+            // lblOldPass
+            // 
+            this.lblOldPass.AutoSize = true;
+            this.lblOldPass.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.lblOldPass.Location = new System.Drawing.Point(37, 92);
+            this.lblOldPass.Name = "lblOldPass";
+            this.lblOldPass.Size = new System.Drawing.Size(108, 24);
+            this.lblOldPass.TabIndex = 8;
+            this.lblOldPass.Text = "Stara lozinka:";
+            // 
             // btnSavePass
             // 
             this.btnSavePass.AutoSize = true;
             this.btnSavePass.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnSavePass.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold);
             this.btnSavePass.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSavePass.Location = new System.Drawing.Point(487, 204);
+            this.btnSavePass.Location = new System.Drawing.Point(530, 190);
             this.btnSavePass.Name = "btnSavePass";
             this.btnSavePass.Size = new System.Drawing.Size(151, 36);
-            this.btnSavePass.TabIndex = 7;
+            this.btnSavePass.TabIndex = 4;
             this.btnSavePass.Text = "Spremi promjene";
             this.btnSavePass.UseVisualStyleBackColor = false;
+            this.btnSavePass.Click += new System.EventHandler(this.btnSavePass_Click);
             // 
-            // textBox7
+            // txtRepeatPass
             // 
-            this.textBox7.Location = new System.Drawing.Point(267, 152);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(222, 30);
-            this.textBox7.TabIndex = 6;
+            this.txtRepeatPass.Location = new System.Drawing.Point(267, 190);
+            this.txtRepeatPass.Name = "txtRepeatPass";
+            this.txtRepeatPass.Size = new System.Drawing.Size(222, 30);
+            this.txtRepeatPass.TabIndex = 3;
+            this.txtRepeatPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRepeatPass_KeyDown);
             // 
-            // textBox6
+            // txtNewPass
             // 
-            this.textBox6.Location = new System.Drawing.Point(267, 101);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(222, 30);
-            this.textBox6.TabIndex = 5;
+            this.txtNewPass.Location = new System.Drawing.Point(267, 136);
+            this.txtNewPass.Name = "txtNewPass";
+            this.txtNewPass.Size = new System.Drawing.Size(222, 30);
+            this.txtNewPass.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 158);
+            this.label1.Location = new System.Drawing.Point(37, 196);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(209, 24);
             this.label1.TabIndex = 3;
@@ -231,7 +256,7 @@
             // 
             this.lblNewPass.AutoSize = true;
             this.lblNewPass.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.lblNewPass.Location = new System.Drawing.Point(37, 107);
+            this.lblNewPass.Location = new System.Drawing.Point(37, 142);
             this.lblNewPass.Name = "lblNewPass";
             this.lblNewPass.Size = new System.Drawing.Size(108, 24);
             this.lblNewPass.TabIndex = 2;
@@ -268,22 +293,24 @@
 
         private System.Windows.Forms.TabControl tcMyProfile;
         private System.Windows.Forms.TabPage TabPageInfoChange;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblNaslov;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblSurname;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TabPage TabPagePasswordChange;
         private System.Windows.Forms.Button btnSavePass;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtRepeatPass;
+        private System.Windows.Forms.TextBox txtNewPass;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNewPass;
         private System.Windows.Forms.Label lblPassChange;
+        private System.Windows.Forms.TextBox txtOldPass;
+        private System.Windows.Forms.Label lblOldPass;
     }
 }
