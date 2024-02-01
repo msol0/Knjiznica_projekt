@@ -37,12 +37,14 @@
             // 
             // dgKnjige
             // 
+            this.dgKnjige.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgKnjige.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgKnjige.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgKnjige.Location = new System.Drawing.Point(51, 66);
             this.dgKnjige.Name = "dgKnjige";
             this.dgKnjige.RowHeadersWidth = 51;
             this.dgKnjige.RowTemplate.Height = 24;
-            this.dgKnjige.Size = new System.Drawing.Size(465, 278);
+            this.dgKnjige.Size = new System.Drawing.Size(658, 364);
             this.dgKnjige.TabIndex = 0;
             // 
             // btnAdd
@@ -51,7 +53,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.Lime;
             this.btnAdd.Font = new System.Drawing.Font("Arial Narrow", 11F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.Location = new System.Drawing.Point(51, 3);
+            this.btnAdd.Location = new System.Drawing.Point(51, 13);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(113, 33);
             this.btnAdd.TabIndex = 1;
@@ -65,7 +67,7 @@
             this.btnEdit.BackColor = System.Drawing.Color.Magenta;
             this.btnEdit.Font = new System.Drawing.Font("Arial Narrow", 11F, System.Drawing.FontStyle.Bold);
             this.btnEdit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEdit.Location = new System.Drawing.Point(219, 3);
+            this.btnEdit.Location = new System.Drawing.Point(324, 13);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(127, 33);
             this.btnEdit.TabIndex = 2;
@@ -79,7 +81,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnDelete.Font = new System.Drawing.Font("Arial Narrow", 11F, System.Drawing.FontStyle.Bold);
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDelete.Location = new System.Drawing.Point(402, 3);
+            this.btnDelete.Location = new System.Drawing.Point(595, 13);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(114, 33);
             this.btnDelete.TabIndex = 3;
@@ -97,7 +99,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgKnjige);
             this.Name = "Control_EditBooks";
-            this.Size = new System.Drawing.Size(586, 369);
+            this.Size = new System.Drawing.Size(792, 467);
             ((System.ComponentModel.ISupportInitialize)(this.dgKnjige)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

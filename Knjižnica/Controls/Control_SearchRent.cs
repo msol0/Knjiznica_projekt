@@ -30,7 +30,7 @@ namespace Knjižnica.Controls
         }
         private void Init()
         {
-            dgDostupneKnjige.DataSource = _knjigastore.DostupneKnjige(id);
+            dgDostupneKnjige.DataSource = _knjigastore.GetDostupneKnjige(id);
             dgDostupneKnjige.Columns[3].Visible = false;
             dgDostupneKnjige.Columns[8].Visible = false;
             dgDostupneKnjige.Columns[9].Visible = false;
@@ -76,7 +76,7 @@ namespace Knjižnica.Controls
                     connectionManager.CloseConnection(connection);
                 }
                 _knjigastore.PosudiKnjigu(id, id_knjiga);
-                dgDostupneKnjige.DataSource = _knjigastore.DostupneKnjige(id);
+                dgDostupneKnjige.DataSource = _knjigastore.GetDostupneKnjige(id);
             }
         }
 
@@ -87,7 +87,7 @@ namespace Knjižnica.Controls
 
         private void Pretraga()
         {
-            var knjige = _knjigastore.DostupneKnjige(id);
+            var knjige = _knjigastore.GetDostupneKnjige(id);
 
             knjige = knjige.Where(x => x.Naslov.ToUpper().Contains(txtTrazi.Text.ToUpper())
                 || x.Autor.ToUpper().Contains(txtTrazi.Text.ToUpper())

@@ -73,6 +73,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\PravaEnums.cs" />
+    <Compile Include="Models\Gradja.cs" />
+    <Compile Include="Models\Jezik_izdanja.cs" />
+    <Compile Include="Models\Kategorija.cs" />
     <Compile Include="Models\Knjiga.cs" />
     <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Program.cs" />

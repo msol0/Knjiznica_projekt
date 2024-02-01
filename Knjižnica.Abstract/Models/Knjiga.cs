@@ -16,7 +16,7 @@ namespace Knjižnica.Abstract.Models
         public string Jezik { get; set; }
         public string Gradja { get; set; }
         public string Kategorija { get; set; }
-        public int Količina { get; set; }
+        public int Kolicina { get; set; }
         public bool Dostupnost {  get; set; }
     }
 }

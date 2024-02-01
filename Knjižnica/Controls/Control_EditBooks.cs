@@ -23,10 +23,7 @@ namespace Knjižnica.Controls
                 _knjigaStore = new KnjigaStore();
             }
             InitializeComponent();
-            dgKnjige.DataSource = _knjigaStore.SveKnjige();
-            dgKnjige.Columns[3].Visible = false;
-            dgKnjige.Columns[8].Visible = false;
-            dgKnjige.Columns[9].Visible = false;
+            dgKnjige.DataSource = _knjigaStore.GetSveKnjige();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -35,18 +32,44 @@ namespace Knjižnica.Controls
 
             if (addEditForm.ShowDialog() == DialogResult.OK)
             {
-                dgKnjige.DataSource = _knjigaStore.SveKnjige();
+                dgKnjige.DataSource = _knjigaStore.GetSveKnjige();
             }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            Knjiga knjiga = new Knjiga();
 
+            knjiga.ID = Convert.ToInt32(dgKnjige.SelectedRows[0].Cells["ID"].Value);
+            knjiga.Naslov = dgKnjige.SelectedRows[0].Cells["Naslov"].Value.ToString();
+            knjiga.Autor = dgKnjige.SelectedRows[0].Cells["Autor"].Value.ToString();
+            knjiga.Mjesto_izdavanja = dgKnjige.SelectedRows[0].Cells["Mjesto_izdavanja"].Value.ToString();
+            knjiga.Izdavac = dgKnjige.SelectedRows[0].Cells["Izdavac"].Value.ToString();
+            knjiga.Jezik = dgKnjige.SelectedRows[0].Cells["Jezik"].Value.ToString();
+            knjiga.Gradja = dgKnjige.SelectedRows[0].Cells["Gradja"].Value.ToString();
+            knjiga.Kategorija = dgKnjige.SelectedRows[0].Cells["Kategorija"].Value.ToString();
+            knjiga.Kolicina = (int) dgKnjige.SelectedRows[0].Cells["Kolicina"].Value;
+            knjiga.Dostupnost = (bool) dgKnjige.SelectedRows[0].Cells["Dostupnost"].Value;
+
+            AddEditBooksForm addEditForm = new AddEditBooksForm(knjiga);
+
+            if (addEditForm.ShowDialog() == DialogResult.OK)
+            {
+                dgKnjige.DataSource = _knjigaStore.GetSveKnjige();
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Jeste li sigurni da želite obrisati ovu građu?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                == DialogResult.Yes)
+            {
+                int selectedId = Convert.ToInt32(dgKnjige.SelectedRows[0].Cells["ID"].Value);
 
+                _knjigaStore.ObrisiGradju(selectedId);
+
+                dgKnjige.DataSource = _knjigaStore.GetSveKnjige();
+            }
         }
     }
 }

@@ -39,12 +39,12 @@
             this.lblAutor = new System.Windows.Forms.Label();
             this.txtNaslov = new System.Windows.Forms.TextBox();
             this.lblJezik = new System.Windows.Forms.Label();
-            this.lblZanr = new System.Windows.Forms.Label();
+            this.lblKategorija = new System.Windows.Forms.Label();
             this.lblKolicina = new System.Windows.Forms.Label();
             this.lblGradja = new System.Windows.Forms.Label();
             this.lblDostupnost = new System.Windows.Forms.Label();
             this.cbJezik = new System.Windows.Forms.ComboBox();
-            this.cbZanr = new System.Windows.Forms.ComboBox();
+            this.cbKategorija = new System.Windows.Forms.ComboBox();
             this.cbGradja = new System.Windows.Forms.ComboBox();
             this.numKolicina = new System.Windows.Forms.NumericUpDown();
             this.numDostupnost = new System.Windows.Forms.NumericUpDown();
@@ -67,6 +67,7 @@
             this.btnSpremi.TabIndex = 42;
             this.btnSpremi.Text = "Spremi";
             this.btnSpremi.UseVisualStyleBackColor = false;
+            this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
             // 
             // btnOdustani
             // 
@@ -83,6 +84,7 @@
             this.btnOdustani.TabIndex = 41;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = false;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
             // txtIzdavac
             // 
@@ -170,15 +172,15 @@
             this.lblJezik.TabIndex = 43;
             this.lblJezik.Text = "Jezik:";
             // 
-            // lblZanr
+            // lblKategorija
             // 
-            this.lblZanr.AutoSize = true;
-            this.lblZanr.Font = new System.Drawing.Font("Arial Narrow", 13F);
-            this.lblZanr.Location = new System.Drawing.Point(53, 277);
-            this.lblZanr.Name = "lblZanr";
-            this.lblZanr.Size = new System.Drawing.Size(54, 26);
-            this.lblZanr.TabIndex = 44;
-            this.lblZanr.Text = "Žanr:";
+            this.lblKategorija.AutoSize = true;
+            this.lblKategorija.Font = new System.Drawing.Font("Arial Narrow", 13F);
+            this.lblKategorija.Location = new System.Drawing.Point(53, 277);
+            this.lblKategorija.Name = "lblKategorija";
+            this.lblKategorija.Size = new System.Drawing.Size(98, 26);
+            this.lblKategorija.TabIndex = 44;
+            this.lblKategorija.Text = "Kategorija:";
             // 
             // lblKolicina
             // 
@@ -218,13 +220,13 @@
             this.cbJezik.Size = new System.Drawing.Size(221, 24);
             this.cbJezik.TabIndex = 5;
             // 
-            // cbZanr
+            // cbKategorija
             // 
-            this.cbZanr.FormattingEnabled = true;
-            this.cbZanr.Location = new System.Drawing.Point(217, 277);
-            this.cbZanr.Name = "cbZanr";
-            this.cbZanr.Size = new System.Drawing.Size(221, 24);
-            this.cbZanr.TabIndex = 6;
+            this.cbKategorija.FormattingEnabled = true;
+            this.cbKategorija.Location = new System.Drawing.Point(217, 277);
+            this.cbKategorija.Name = "cbKategorija";
+            this.cbKategorija.Size = new System.Drawing.Size(221, 24);
+            this.cbKategorija.TabIndex = 6;
             // 
             // cbGradja
             // 
@@ -262,12 +264,12 @@
             this.Controls.Add(this.numDostupnost);
             this.Controls.Add(this.numKolicina);
             this.Controls.Add(this.cbGradja);
-            this.Controls.Add(this.cbZanr);
+            this.Controls.Add(this.cbKategorija);
             this.Controls.Add(this.cbJezik);
             this.Controls.Add(this.lblDostupnost);
             this.Controls.Add(this.lblGradja);
             this.Controls.Add(this.lblKolicina);
-            this.Controls.Add(this.lblZanr);
+            this.Controls.Add(this.lblKategorija);
             this.Controls.Add(this.lblJezik);
             this.Controls.Add(this.btnSpremi);
             this.Controls.Add(this.btnOdustani);
@@ -301,12 +303,12 @@
         private System.Windows.Forms.Label lblAutor;
         private System.Windows.Forms.TextBox txtNaslov;
         private System.Windows.Forms.Label lblJezik;
-        private System.Windows.Forms.Label lblZanr;
+        private System.Windows.Forms.Label lblKategorija;
         private System.Windows.Forms.Label lblKolicina;
         private System.Windows.Forms.Label lblGradja;
         private System.Windows.Forms.Label lblDostupnost;
         private System.Windows.Forms.ComboBox cbJezik;
-        private System.Windows.Forms.ComboBox cbZanr;
+        private System.Windows.Forms.ComboBox cbKategorija;
         private System.Windows.Forms.ComboBox cbGradja;
         private System.Windows.Forms.NumericUpDown numKolicina;
         private System.Windows.Forms.NumericUpDown numDostupnost;

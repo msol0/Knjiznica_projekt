@@ -22,20 +22,67 @@ namespace Knjižnica.Forms
             if (_knjigaStore == null)
                 _knjigaStore = new KnjigaStore();
             InitializeComponent();
-            
 
+            //povlačenje podataka iz baze za combo box
+            cbJezik.DataSource = _knjigaStore.GetJezik();
+            cbJezik.DisplayMember = "Jezik";
+            cbJezik.ValueMember = "ID";
+
+            cbKategorija.DataSource = _knjigaStore.GetKategorija();
+            cbKategorija.DisplayMember = "Naziv";
+            cbKategorija.ValueMember = "ID";
+
+            cbGradja.DataSource = _knjigaStore.GetGradja();
+            cbGradja.DisplayMember = "Naziv";
+            cbGradja.ValueMember = "ID";
+
+            //postavljanje toolova na odabrane vrijednosti iz dg
             if (knjiga != null & knjiga.ID != 0)
             {
-                //Ažuriranje
-                this.Text = "Ažuriraj podatak";
-                btnSpremi.Text = "Ažuriraj";
-
+                Knjiga_ID = knjiga.ID;
                 txtNaslov.Text = knjiga.Naslov;
                 txtAutor.Text = knjiga.Autor;
-                txtTelefon.Text = kontakt.Broj_telefona;
-                txtAdresa.Text = kontakt.Adresa;
-                Knjiga_ID = knjiga.ID;
+                txtMjestoIzdanja.Text = knjiga.Mjesto_izdavanja;
+                txtIzdavac.Text = knjiga.Izdavac;
+                cbJezik.Text = knjiga.Jezik;
+                cbKategorija.Text = knjiga.Kategorija;
+                cbGradja.Text = knjiga.Gradja;
+                numKolicina.Value = knjiga.Kolicina;
+                numDostupnost.Value = knjiga.Dostupnost ? 1 : 0; 
             }
+        }
+
+        private void btnOdustani_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void btnSpremi_Click(object sender, EventArgs e)
+        {
+            Knjiga knjiga = new Knjiga();
+
+            knjiga.Naslov = txtNaslov.Text;
+            knjiga.Autor = txtAutor.Text;
+            knjiga.Mjesto_izdavanja = txtMjestoIzdanja.Text;
+            knjiga.Izdavac = txtIzdavac.Text;
+            knjiga.Jezik =(cbJezik.SelectedIndex+1).ToString();
+            knjiga.Kategorija = (cbKategorija.SelectedIndex + 1).ToString();
+            knjiga.Gradja = (cbGradja.SelectedIndex + 1).ToString();
+            knjiga.Kolicina = (int)numKolicina.Value;
+            knjiga.Dostupnost = numDostupnost.Value > 0;
+            knjiga.ID = Knjiga_ID;
+
+            if (Knjiga_ID != 0)
+            {
+                _knjigaStore.AzurirajGradju(knjiga);
+            }
+            else
+            {
+                _knjigaStore.DodajGradju(knjiga);
+            }
+
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
