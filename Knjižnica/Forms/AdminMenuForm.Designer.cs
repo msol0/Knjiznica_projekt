@@ -34,13 +34,13 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsBtnProfil = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.btnAllUsers = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnRecords = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnBooks = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.panelAdmin = new System.Windows.Forms.Panel();
+            this.btnRecords = new System.Windows.Forms.ToolStripButton();
+            this.btnAllUsers = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +48,7 @@
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.Color.Gainsboro;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 30);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnLogOut,
@@ -96,6 +97,7 @@
             this.toolStrip2.BackColor = System.Drawing.Color.Gainsboro;
             this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Left;
             this.toolStrip2.Font = new System.Drawing.Font("Arial Narrow", 11F);
+            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnAllUsers,
@@ -110,32 +112,10 @@
             this.toolStrip2.TabIndex = 3;
             this.toolStrip2.Text = "toolStrip2";
             // 
-            // btnAllUsers
-            // 
-            this.btnAllUsers.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnAllUsers.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.btnAllUsers.Image = ((System.Drawing.Image)(resources.GetObject("btnAllUsers.Image")));
-            this.btnAllUsers.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAllUsers.Name = "btnAllUsers";
-            this.btnAllUsers.Size = new System.Drawing.Size(159, 27);
-            this.btnAllUsers.Text = "Popis svih korisnika";
-            this.btnAllUsers.Click += new System.EventHandler(this.btnAllUsers_Click);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(159, 6);
-            // 
-            // btnRecords
-            // 
-            this.btnRecords.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnRecords.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.btnRecords.Image = ((System.Drawing.Image)(resources.GetObject("btnRecords.Image")));
-            this.btnRecords.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnRecords.Name = "btnRecords";
-            this.btnRecords.Size = new System.Drawing.Size(159, 27);
-            this.btnRecords.Text = "Evidencija dugovanja";
-            this.btnRecords.Click += new System.EventHandler(this.btnRecords_Click);
             // 
             // toolStripSeparator4
             // 
@@ -160,10 +140,32 @@
             // 
             // panelAdmin
             // 
-            this.panelAdmin.Location = new System.Drawing.Point(175, 59);
+            this.panelAdmin.Location = new System.Drawing.Point(165, 40);
             this.panelAdmin.Name = "panelAdmin";
-            this.panelAdmin.Size = new System.Drawing.Size(758, 441);
+            this.panelAdmin.Size = new System.Drawing.Size(780, 489);
             this.panelAdmin.TabIndex = 4;
+            // 
+            // btnRecords
+            // 
+            this.btnRecords.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnRecords.Font = new System.Drawing.Font("Arial Narrow", 11F);
+            this.btnRecords.Image = ((System.Drawing.Image)(resources.GetObject("btnRecords.Image")));
+            this.btnRecords.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRecords.Name = "btnRecords";
+            this.btnRecords.Size = new System.Drawing.Size(159, 27);
+            this.btnRecords.Text = "Evidencija dugovanja";
+            this.btnRecords.Click += new System.EventHandler(this.btnRecords_Click);
+            // 
+            // btnAllUsers
+            // 
+            this.btnAllUsers.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnAllUsers.Font = new System.Drawing.Font("Arial Narrow", 11F);
+            this.btnAllUsers.Image = ((System.Drawing.Image)(resources.GetObject("btnAllUsers.Image")));
+            this.btnAllUsers.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAllUsers.Name = "btnAllUsers";
+            this.btnAllUsers.Size = new System.Drawing.Size(159, 27);
+            this.btnAllUsers.Text = "Popis svih korisnika";
+            this.btnAllUsers.Click += new System.EventHandler(this.btnAllUsers_Click);
             // 
             // AdminMenuForm
             // 
@@ -175,6 +177,7 @@
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.Name = "AdminMenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminMenuForm";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -191,12 +194,12 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tsBtnProfil;
         private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripButton btnAllUsers;
-        private System.Windows.Forms.ToolStripButton btnRecords;
         private System.Windows.Forms.ToolStripButton btnBooks;
         private System.Windows.Forms.Panel panelAdmin;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton btnAllUsers;
+        private System.Windows.Forms.ToolStripButton btnRecords;
     }
 }

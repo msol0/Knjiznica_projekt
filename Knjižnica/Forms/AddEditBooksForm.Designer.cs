@@ -282,6 +282,7 @@
             this.Controls.Add(this.lblAutor);
             this.Controls.Add(this.txtNaslov);
             this.Name = "AddEditBooksForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddEditBooksForm";
             ((System.ComponentModel.ISupportInitialize)(this.numKolicina)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDostupnost)).EndInit();

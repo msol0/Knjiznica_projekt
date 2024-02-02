@@ -78,6 +78,7 @@
     <Compile Include="Models\Kategorija.cs" />
     <Compile Include="Models\Knjiga.cs" />
     <Compile Include="Models\Korisnik.cs" />
+    <Compile Include="Models\Rezervacija.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

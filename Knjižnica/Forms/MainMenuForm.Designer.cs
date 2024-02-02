@@ -57,7 +57,7 @@
             this.toolStripSeparator1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(883, 33);
+            this.toolStrip1.Size = new System.Drawing.Size(896, 33);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -147,9 +147,9 @@
             // 
             // panelGlavni
             // 
-            this.panelGlavni.Location = new System.Drawing.Point(41, 97);
+            this.panelGlavni.Location = new System.Drawing.Point(12, 61);
             this.panelGlavni.Name = "panelGlavni";
-            this.panelGlavni.Size = new System.Drawing.Size(800, 349);
+            this.panelGlavni.Size = new System.Drawing.Size(871, 385);
             this.panelGlavni.TabIndex = 7;
             // 
             // MainMenuForm
@@ -157,10 +157,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
-            this.ClientSize = new System.Drawing.Size(883, 529);
+            this.ClientSize = new System.Drawing.Size(896, 529);
             this.Controls.Add(this.panelGlavni);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MainMenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenuForm";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

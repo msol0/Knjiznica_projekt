@@ -203,6 +203,7 @@
             this.txtOldPass.Name = "txtOldPass";
             this.txtOldPass.Size = new System.Drawing.Size(222, 30);
             this.txtOldPass.TabIndex = 1;
+            this.txtOldPass.UseSystemPasswordChar = true;
             // 
             // lblOldPass
             // 
@@ -234,6 +235,7 @@
             this.txtRepeatPass.Name = "txtRepeatPass";
             this.txtRepeatPass.Size = new System.Drawing.Size(222, 30);
             this.txtRepeatPass.TabIndex = 3;
+            this.txtRepeatPass.UseSystemPasswordChar = true;
             this.txtRepeatPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRepeatPass_KeyDown);
             // 
             // txtNewPass
@@ -242,6 +244,7 @@
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(222, 30);
             this.txtNewPass.TabIndex = 2;
+            this.txtNewPass.UseSystemPasswordChar = true;
             // 
             // label1
             // 

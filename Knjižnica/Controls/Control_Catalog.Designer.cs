@@ -1,6 +1,6 @@
 ﻿namespace Knjižnica.Controls
 {
-    partial class Control_SearchRent
+    partial class Control_Catalog
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Control_SearchRent));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Control_Catalog));
             this.btnRent = new System.Windows.Forms.Button();
             this.btnPretraga = new System.Windows.Forms.Button();
             this.txtTrazi = new System.Windows.Forms.TextBox();
@@ -43,7 +43,7 @@
             this.btnRent.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnRent.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold);
             this.btnRent.ForeColor = System.Drawing.Color.White;
-            this.btnRent.Location = new System.Drawing.Point(474, 300);
+            this.btnRent.Location = new System.Drawing.Point(698, 337);
             this.btnRent.Name = "btnRent";
             this.btnRent.Size = new System.Drawing.Size(87, 32);
             this.btnRent.TabIndex = 20;
@@ -56,7 +56,7 @@
             this.btnPretraga.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnPretraga.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnPretraga.Image = ((System.Drawing.Image)(resources.GetObject("btnPretraga.Image")));
-            this.btnPretraga.Location = new System.Drawing.Point(717, 9);
+            this.btnPretraga.Location = new System.Drawing.Point(803, 17);
             this.btnPretraga.Name = "btnPretraga";
             this.btnPretraga.Size = new System.Drawing.Size(33, 28);
             this.btnPretraga.TabIndex = 19;
@@ -65,7 +65,7 @@
             // 
             // txtTrazi
             // 
-            this.txtTrazi.Location = new System.Drawing.Point(474, 12);
+            this.txtTrazi.Location = new System.Drawing.Point(565, 20);
             this.txtTrazi.Name = "txtTrazi";
             this.txtTrazi.Size = new System.Drawing.Size(220, 22);
             this.txtTrazi.TabIndex = 18;
@@ -74,10 +74,10 @@
             // lblAvailable
             // 
             this.lblAvailable.AutoSize = true;
-            this.lblAvailable.Font = new System.Drawing.Font("Arial Narrow", 11.5F);
-            this.lblAvailable.Location = new System.Drawing.Point(1, 12);
+            this.lblAvailable.Font = new System.Drawing.Font("Arial Narrow", 15F);
+            this.lblAvailable.Location = new System.Drawing.Point(25, 12);
             this.lblAvailable.Name = "lblAvailable";
-            this.lblAvailable.Size = new System.Drawing.Size(186, 24);
+            this.lblAvailable.Size = new System.Drawing.Size(231, 30);
             this.lblAvailable.TabIndex = 17;
             this.lblAvailable.Text = "Katalog dostupnih knjiga";
             // 
@@ -88,14 +88,14 @@
             this.dgDostupneKnjige.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgDostupneKnjige.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgDostupneKnjige.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDostupneKnjige.Location = new System.Drawing.Point(5, 52);
+            this.dgDostupneKnjige.Location = new System.Drawing.Point(30, 62);
             this.dgDostupneKnjige.Name = "dgDostupneKnjige";
             this.dgDostupneKnjige.RowHeadersWidth = 51;
             this.dgDostupneKnjige.RowTemplate.Height = 24;
-            this.dgDostupneKnjige.Size = new System.Drawing.Size(745, 232);
+            this.dgDostupneKnjige.Size = new System.Drawing.Size(806, 269);
             this.dgDostupneKnjige.TabIndex = 16;
             // 
-            // Control_SearchRent
+            // Control_Catalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,8 +105,8 @@
             this.Controls.Add(this.txtTrazi);
             this.Controls.Add(this.lblAvailable);
             this.Controls.Add(this.dgDostupneKnjige);
-            this.Name = "Control_SearchRent";
-            this.Size = new System.Drawing.Size(819, 366);
+            this.Name = "Control_Catalog";
+            this.Size = new System.Drawing.Size(871, 385);
             ((System.ComponentModel.ISupportInitialize)(this.dgDostupneKnjige)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

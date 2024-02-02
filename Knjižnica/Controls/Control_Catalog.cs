@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace Knjižnica.Controls
 {
-    public partial class Control_SearchRent : UserControl
+    public partial class Control_Catalog : UserControl
     {
         private KnjigaStore _knjigastore;
         public string username { get; set; }
         public int id { get; set; }
-        public Control_SearchRent(string username, int id)
+        public Control_Catalog(string username, int id)
         {
             if (_knjigastore == null)
                 _knjigastore = new KnjigaStore();
@@ -38,43 +38,9 @@ namespace Knjižnica.Controls
 
         private void btnRent_Click(object sender, EventArgs e)
         {
-
             if (dgDostupneKnjige.SelectedRows.Count > 0)
             {
-                SqlConnectionFactory connectionManager = new SqlConnectionFactory();
-
-                DataGridViewRow selectedRow = dgDostupneKnjige.SelectedRows[0];
-                int id_knjiga = Convert.ToInt32(selectedRow.Cells["id"].Value);
-
-
-                using (var connection = connectionManager.GetNewConnection())
-                {
-                    if (connection != null)
-                    {
-                        string prvi_upit = String.Format("UPDATE knjiga " +
-                            "SET količina = količina - 1 " +
-                            "WHERE id = @id_knjiga;");
-                        using (var command = new MySqlCommand(prvi_upit, connection))
-                        {
-                            command.Parameters.AddWithValue("@id_knjiga", id_knjiga);
-                            command.ExecuteNonQuery();
-                        }
-
-                        string drugi_upit = String.Format("UPDATE knjiga " +
-                            "SET dostupnost = CASE " +
-                            "WHEN količina = 0 THEN 0 " +
-                            "ELSE dostupnost " +
-                            "END " +
-                            "WHERE id = @id_knjiga;");
-
-                        using (var command = new MySqlCommand(drugi_upit, connection))
-                        {
-                            command.Parameters.AddWithValue("@id_knjiga", id_knjiga);
-                            command.ExecuteNonQuery();
-                        }
-                    }
-                    connectionManager.CloseConnection(connection);
-                }
+                int id_knjiga = Convert.ToInt32(dgDostupneKnjige.SelectedRows[0].Cells["id"].Value);
                 _knjigastore.PosudiKnjigu(id, id_knjiga);
                 dgDostupneKnjige.DataSource = _knjigastore.GetDostupneKnjige(id);
             }

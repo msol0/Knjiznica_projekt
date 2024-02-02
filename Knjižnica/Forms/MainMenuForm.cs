@@ -16,7 +16,6 @@ namespace Knjižnica.Forms
     public partial class MainMenuForm : Form
     {
         private Korisnik _korisnik;
-        private KorisnikStore _korisnikStore;
         public MainMenuForm(Korisnik korisnik)
         {
             
@@ -31,7 +30,7 @@ namespace Knjižnica.Forms
         }
         public void SakrijUsluge()
         {
-            tsbtnMenu.Enabled = false;
+            tsbtnMenu.Visible = false;
             tsbtnProfil.Visible = false;
         }
 
@@ -56,13 +55,13 @@ namespace Knjižnica.Forms
         private void itemRezervacije_Click(object sender, EventArgs e)
         {
             panelGlavni.Controls.Clear();
-            panelGlavni.Controls.Add(new Control_MyReservations());
+            panelGlavni.Controls.Add(new Control_MyReservations(_korisnik.ID));
         }
 
         private void itemPosudi_Click(object sender, EventArgs e)
         {
             panelGlavni.Controls.Clear();
-            panelGlavni.Controls.Add(new Control_SearchRent(_korisnik.Korisnicko_ime, _korisnik.ID));
+            panelGlavni.Controls.Add(new Control_Catalog(_korisnik.Korisnicko_ime, _korisnik.ID));
         }
     }
 }

@@ -101,11 +101,11 @@
     <Compile Include="Controls\Control_RentRecords.Designer.cs">
       <DependentUpon>Control_RentRecords.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Control_SearchRent.cs">
+    <Compile Include="Controls\Control_Catalog.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Control_SearchRent.Designer.cs">
-      <DependentUpon>Control_SearchRent.cs</DependentUpon>
+    <Compile Include="Controls\Control_Catalog.Designer.cs">
+      <DependentUpon>Control_Catalog.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Control_ShowAllUsers.cs">
       <SubType>UserControl</SubType>
@@ -157,8 +157,8 @@
     <EmbeddedResource Include="Controls\Control_RentRecords.resx">
       <DependentUpon>Control_RentRecords.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Control_SearchRent.resx">
-      <DependentUpon>Control_SearchRent.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Control_Catalog.resx">
+      <DependentUpon>Control_Catalog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Control_ShowAllUsers.resx">
       <DependentUpon>Control_ShowAllUsers.cs</DependentUpon>

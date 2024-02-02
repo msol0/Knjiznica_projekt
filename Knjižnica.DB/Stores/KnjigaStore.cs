@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Knjižnica.DB.Stores
 {
@@ -28,7 +29,7 @@ namespace Knjižnica.DB.Stores
                         "JOIN gradja g on g.id = k.id_gradja " +
                         "JOIN kategorija c ON c.id = k.id_kategorija " +
                         "LEFT JOIN rezervacija r ON r.id_knjige = k.id AND r.id_korisnika = @id_korisnika " +
-                        "WHERE k.dostupnost = 1 AND r.id_knjige IS NULL;");
+                        "WHERE k.dostupnost = 1 AND (r.id_knjige IS NULL OR r.id_status = 2);");
 
                     using (var command = new MySqlCommand(upit, connection))
                     {
@@ -58,7 +59,6 @@ namespace Knjižnica.DB.Stores
             }
             return bookList;
         }
-
         public List<Knjiga> GetSveKnjige()
         {
                 SqlConnectionFactory connectionManager = new SqlConnectionFactory();
@@ -105,24 +105,80 @@ namespace Knjižnica.DB.Stores
                 return bookList.OrderBy(knjiga => knjiga.ID).ToList();
         }
 
-        public void PosudiKnjigu(int id_korisnika, int id_knjige)
+        public void PosudiKnjigu(int id_korisnika, int id_knjiga)
         {
 
             SqlConnectionFactory connectionManager = new SqlConnectionFactory();
-
             using (var connection = connectionManager.GetNewConnection())
             {
                 if (connection != null)
                 {
-                    var upit = String.Format("INSERT INTO rezervacija (id_knjige,id_korisnika,datum_posudbe, datum_vracanja) " +
+                    string upit_kolicina = String.Format("UPDATE knjiga " +
+                        "SET Kolicina = Kolicina - 1 " +
+                        "WHERE id = @id_knjiga;");
+
+                    using (var command = new MySqlCommand(upit_kolicina, connection))
+                    {
+                        command.Parameters.AddWithValue("@id_knjiga", id_knjiga);
+                        command.ExecuteNonQuery();
+                    }
+
+                    string upit_dostupnost = String.Format("UPDATE knjiga " +
+                        "SET dostupnost = CASE " +
+                        "WHEN Kolicina = 0 THEN 0 " +
+                        "ELSE dostupnost " +
+                        "END " +
+                        "WHERE id = @id_knjiga;");
+
+                    using (var command = new MySqlCommand(upit_dostupnost, connection))
+                    {
+                        command.Parameters.AddWithValue("@id_knjiga", id_knjiga);
+                        command.ExecuteNonQuery();
+                    }
+
+                    string upit_rezervacija = String.Format("INSERT INTO rezervacija (id_knjige,id_korisnika,datum_posudbe, datum_vracanja) " +
                         "VALUES (@id_knjige, @id_korisnika, NOW(), DATE_ADD(NOW(), INTERVAL 7 DAY))");
 
-                    using (var command = new MySqlCommand(upit, connection))
+                    using (var command = new MySqlCommand(upit_rezervacija, connection))
                     {
                         command.Parameters.AddWithValue("@id_korisnika", id_korisnika);
+                        command.Parameters.AddWithValue("@id_knjige", id_knjiga);
+                        command.ExecuteNonQuery();
+                    }
+
+                }
+                connectionManager.CloseConnection(connection);
+            }
+        }
+
+        public void VratiKnjigu(int id_knjige, int id_korisnika)
+        {
+            var connectionManager = new SqlConnectionFactory();
+            using (var connection = connectionManager.GetNewConnection())
+            {
+                if (connection != null)
+                {
+                    string upit_kolicina = String.Format("UPDATE knjiga " +
+                        "SET Kolicina = Kolicina + 1 " +
+                        "WHERE id = @id_knjige;");
+
+                    using (var command = new MySqlCommand(upit_kolicina, connection))
+                    {
                         command.Parameters.AddWithValue("@id_knjige", id_knjige);
                         command.ExecuteNonQuery();
                     }
+
+                    string upit_status = String.Format("UPDATE rezervacija r " +
+                        "SET r.id_status = (SELECT s.id FROM status_rezervacije s WHERE s.naziv = 'Vraceno') " +
+                        "WHERE r.id_knjige = @id_knjige AND r.id_korisnika = @id_korisnika;");
+
+                    using (var command = new MySqlCommand(upit_status, connection))
+                    {
+                        command.Parameters.AddWithValue("@id_knjige", id_knjige);
+                        command.Parameters.AddWithValue("@id_korisnika", id_korisnika);
+                        command.ExecuteNonQuery();
+                    }
+
                 }
                 connectionManager.CloseConnection(connection);
             }
@@ -228,6 +284,7 @@ namespace Knjižnica.DB.Stores
             return lista_gradje;
         }
 
+
         public void AzurirajGradju(Knjiga knjiga)
         {
             var connectionManager = new SqlConnectionFactory();
@@ -315,6 +372,95 @@ namespace Knjižnica.DB.Stores
                 }
             }
         }
+
+
+        public List<Rezervacija> GetRezervacija(int id_korisnika) {
+
+            SqlConnectionFactory connectionManager = new SqlConnectionFactory();
+            List<Rezervacija> rezervacija_list = new List<Rezervacija>();
+
+            using (var connection = connectionManager.GetNewConnection())
+            {
+                if (connection != null)
+                {
+                    string upit = String.Format("SELECT r.id AS ID, b.id AS ID_knjige, b.naslov AS Naslov, b.autor AS Autor," +
+                        " r.datum_posudbe AS Datum_posudbe, r.datum_vracanja AS Datum_vracanja, s.naziv AS Status FROM knjiga b " +
+                        "JOIN rezervacija r ON b.id = r.id_knjige AND r.id_korisnika = @id_korisnika " +
+                        "JOIN status_rezervacije s ON s.id= r.id_status;");
+                    using (var command = new MySqlCommand(upit, connection))
+                    {
+                        command.Parameters.AddWithValue("@id_korisnika", id_korisnika);
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Rezervacija rezervacija = new Rezervacija()
+                                {
+                                    ID = reader.GetInt32("ID"),
+                                    ID_knjige = reader.GetInt32("ID_knjige"),
+                                    Naslov = reader.GetString("Naslov"),
+                                    Autor = reader.GetString("Autor"),
+                                    Datum_posudbe = reader.GetDateTime("Datum_posudbe"),
+                                    Datum_vracanja = reader.GetDateTime("Datum_vracanja"),
+                                    Status = reader.GetString("Status")
+                                };
+                                rezervacija_list.Add(rezervacija);
+                            }
+                        }
+                    }
+                    connectionManager.CloseConnection(connection);
+                }
+            }
+            return rezervacija_list;
+        }
+
+        public List<Rezervacija> GetEvidencijaZaduzenja() 
+        {
+            SqlConnectionFactory connectionManager = new SqlConnectionFactory();
+            List <Rezervacija> evidencijaList = new List <Rezervacija>();
+            using (var connection = connectionManager.GetNewConnection()) 
+            {
+                if (connection != null)
+                {
+                    string upit = String.Format("SELECT r.id AS ID, b.id AS ID_knjige,r.id_korisnika AS ID_korisnika,k.ime AS Ime, k.prezime AS Prezime," +
+                        " b.naslov AS Naslov, b.autor AS Autor," +
+                        " r.datum_posudbe AS Datum_posudbe, r.datum_vracanja AS Datum_vracanja, s.naziv AS Status FROM knjiga b " +
+                        "JOIN rezervacija r ON b.id = r.id_knjige " +
+                        "JOIN status_rezervacije s ON s.id= r.id_status " +
+                        "JOIN korisnik k ON k.id = r.id_korisnika;");
+                    using (var command = new MySqlCommand(upit, connection))
+                    {
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Rezervacija rezervacija = new Rezervacija()
+                                {
+                                    ID = reader.GetInt32("ID"),
+                                    ID_knjige = reader.GetInt32("ID_knjige"),
+                                    ID_korisnika = reader.GetInt32("ID_korisnika"),
+                                    Naslov = reader.GetString("Naslov"),
+                                    Autor = reader.GetString("Autor"),
+                                    Korisnik = reader.GetString("Ime") + " " + reader.GetString("Prezime"),
+                                    Datum_posudbe = reader.GetDateTime("Datum_posudbe"),
+                                    Datum_vracanja = reader.GetDateTime("Datum_vracanja"),
+                                    Status = reader.GetString("Status")
+                                };
+                                evidencijaList.Add(rezervacija);
+                            }
+                        }
+                    }
+                    connectionManager.CloseConnection(connection);
+                }
+            }
+            return evidencijaList.OrderBy(evidencija => evidencija.Status).ToList();
+
+        }
+
+
+        
     }
 }
 
