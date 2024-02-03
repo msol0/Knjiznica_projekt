@@ -23,7 +23,7 @@ namespace Knjižnica.DB.Stores
                 if (connection != null)
                 {
                     string upit = String.Format("SELECT k.id as Id, k.naslov as Naslov, k.autor as Autor, k.izdavac as Izdavac," +
-                        " j.jezik as Jezik, g.naziv as Gradja, c.naziv as Kategorija " +
+                        " j.jezik as Jezik, g.naziv as Gradja, c.naziv as Kategorija, k.kolicina as Kolicina " +
                         "FROM knjiga k " +
                         "JOIN jezik_izdanja j ON j.id = k.id_jezik " +
                         "JOIN gradja g on g.id = k.id_gradja " +
@@ -47,7 +47,8 @@ namespace Knjižnica.DB.Stores
                                     Izdavac = reader.GetString("Izdavac"),
                                     Jezik = reader.GetString("Jezik"),
                                     Gradja = reader.GetString("Gradja"),
-                                    Kategorija = reader.GetString("Kategorija")
+                                    Kategorija = reader.GetString("Kategorija"),
+                                    Kolicina = reader.GetInt32("Kolicina")
                                 };
 
                                 bookList.Add(knjiga);

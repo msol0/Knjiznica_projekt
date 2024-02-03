@@ -32,7 +32,6 @@ namespace Knjižnica.Controls
         {
             dgDostupneKnjige.DataSource = _knjigastore.GetDostupneKnjige(id);
             dgDostupneKnjige.Columns[3].Visible = false;
-            dgDostupneKnjige.Columns[8].Visible = false;
             dgDostupneKnjige.Columns[9].Visible = false;
         }
 
