@@ -35,7 +35,7 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Monotype Corsiva", 21F);
-            this.lblWelcome.Location = new System.Drawing.Point(249, 156);
+            this.lblWelcome.Location = new System.Drawing.Point(388, 212);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(176, 43);
             this.lblWelcome.TabIndex = 0;
@@ -48,7 +48,7 @@
             this.BackColor = System.Drawing.Color.OldLace;
             this.Controls.Add(this.lblWelcome);
             this.Name = "Control_Welcome";
-            this.Size = new System.Drawing.Size(694, 379);
+            this.Size = new System.Drawing.Size(985, 513);
             this.ResumeLayout(false);
             this.PerformLayout();
 

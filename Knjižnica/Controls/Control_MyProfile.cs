@@ -61,8 +61,10 @@ namespace Knjižnica.Controls
 
         private void btnSavePass_Click(object sender, EventArgs e)
         {
-            //_korisnikStore.ProvjeraLozinke(txtOldPass.Text, Korisnik_ID);
             AzuriranjeLozinke();
+            txtOldPass.Clear();
+            txtNewPass.Clear();
+            txtRepeatPass.Clear();
 
         }
 
@@ -72,6 +74,9 @@ namespace Knjižnica.Controls
             if(e.KeyCode == Keys.Enter)
             {
                 AzuriranjeLozinke();
+                txtOldPass.Clear();
+                txtNewPass.Clear();
+                txtRepeatPass.Clear();
             }
         }
 

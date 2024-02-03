@@ -46,6 +46,7 @@
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.Color.Gainsboro;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbtnSignOut,
@@ -57,14 +58,14 @@
             this.toolStripSeparator1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(896, 33);
+            this.toolStrip1.Size = new System.Drawing.Size(1009, 33);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // tsbtnSignOut
             // 
             this.tsbtnSignOut.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbtnSignOut.BackColor = System.Drawing.Color.SeaShell;
+            this.tsbtnSignOut.BackColor = System.Drawing.Color.Gainsboro;
             this.tsbtnSignOut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsbtnSignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.tsbtnSignOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -84,7 +85,7 @@
             // tsbtnProfil
             // 
             this.tsbtnProfil.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbtnProfil.BackColor = System.Drawing.Color.SeaShell;
+            this.tsbtnProfil.BackColor = System.Drawing.Color.Gainsboro;
             this.tsbtnProfil.Font = new System.Drawing.Font("Arial Narrow", 11F, System.Drawing.FontStyle.Bold);
             this.tsbtnProfil.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnProfil.Image")));
             this.tsbtnProfil.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -147,9 +148,9 @@
             // 
             // panelGlavni
             // 
-            this.panelGlavni.Location = new System.Drawing.Point(12, 61);
+            this.panelGlavni.Location = new System.Drawing.Point(0, 36);
             this.panelGlavni.Name = "panelGlavni";
-            this.panelGlavni.Size = new System.Drawing.Size(871, 385);
+            this.panelGlavni.Size = new System.Drawing.Size(1009, 536);
             this.panelGlavni.TabIndex = 7;
             // 
             // MainMenuForm
@@ -157,12 +158,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
-            this.ClientSize = new System.Drawing.Size(896, 529);
+            this.ClientSize = new System.Drawing.Size(1009, 574);
             this.Controls.Add(this.panelGlavni);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MainMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainMenuForm";
+            this.Text = "Knjižnica";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
