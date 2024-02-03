@@ -43,11 +43,11 @@
             this.btnRent.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnRent.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold);
             this.btnRent.ForeColor = System.Drawing.Color.White;
-            this.btnRent.Location = new System.Drawing.Point(698, 337);
+            this.btnRent.Location = new System.Drawing.Point(771, 438);
             this.btnRent.Name = "btnRent";
-            this.btnRent.Size = new System.Drawing.Size(87, 32);
+            this.btnRent.Size = new System.Drawing.Size(115, 32);
             this.btnRent.TabIndex = 20;
-            this.btnRent.Text = "Posudi";
+            this.btnRent.Text = "Posudi knjigu";
             this.btnRent.UseVisualStyleBackColor = false;
             this.btnRent.Click += new System.EventHandler(this.btnRent_Click);
             // 
@@ -56,18 +56,19 @@
             this.btnPretraga.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnPretraga.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnPretraga.Image = ((System.Drawing.Image)(resources.GetObject("btnPretraga.Image")));
-            this.btnPretraga.Location = new System.Drawing.Point(803, 17);
+            this.btnPretraga.Location = new System.Drawing.Point(895, 12);
             this.btnPretraga.Name = "btnPretraga";
-            this.btnPretraga.Size = new System.Drawing.Size(33, 28);
+            this.btnPretraga.Size = new System.Drawing.Size(40, 39);
             this.btnPretraga.TabIndex = 19;
             this.btnPretraga.UseVisualStyleBackColor = true;
             this.btnPretraga.Click += new System.EventHandler(this.btnPretraga_Click);
             // 
             // txtTrazi
             // 
-            this.txtTrazi.Location = new System.Drawing.Point(565, 20);
+            this.txtTrazi.Font = new System.Drawing.Font("Arial", 13F);
+            this.txtTrazi.Location = new System.Drawing.Point(645, 16);
             this.txtTrazi.Name = "txtTrazi";
-            this.txtTrazi.Size = new System.Drawing.Size(220, 22);
+            this.txtTrazi.Size = new System.Drawing.Size(220, 32);
             this.txtTrazi.TabIndex = 18;
             this.txtTrazi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTrazi_KeyDown);
             // 
@@ -87,12 +88,14 @@
             this.dgDostupneKnjige.AllowUserToDeleteRows = false;
             this.dgDostupneKnjige.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgDostupneKnjige.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgDostupneKnjige.BackgroundColor = System.Drawing.Color.OldLace;
             this.dgDostupneKnjige.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDostupneKnjige.GridColor = System.Drawing.Color.OldLace;
             this.dgDostupneKnjige.Location = new System.Drawing.Point(30, 62);
             this.dgDostupneKnjige.Name = "dgDostupneKnjige";
             this.dgDostupneKnjige.RowHeadersWidth = 51;
             this.dgDostupneKnjige.RowTemplate.Height = 24;
-            this.dgDostupneKnjige.Size = new System.Drawing.Size(806, 269);
+            this.dgDostupneKnjige.Size = new System.Drawing.Size(905, 352);
             this.dgDostupneKnjige.TabIndex = 16;
             // 
             // Control_Catalog
@@ -106,7 +109,7 @@
             this.Controls.Add(this.lblAvailable);
             this.Controls.Add(this.dgDostupneKnjige);
             this.Name = "Control_Catalog";
-            this.Size = new System.Drawing.Size(871, 385);
+            this.Size = new System.Drawing.Size(1009, 536);
             ((System.ComponentModel.ISupportInitialize)(this.dgDostupneKnjige)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

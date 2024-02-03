@@ -1,5 +1,4 @@
 ﻿using Knjižnica.Abstract.Models;
-using Knjižnica.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,16 +9,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Knjižnica.Forms
+namespace Knjižnica.Controls
 {
-    public partial class AdminMenuForm : Form
+    public partial class Control_AdminDefault : UserControl
     {
         private Korisnik _korisnik;
-        public AdminMenuForm(Korisnik korisnik)
+        public Control_AdminDefault(Korisnik korisnik)
         {
             InitializeComponent();
             _korisnik = korisnik;
+        }
 
+        private void tsBtnProfil_Click(object sender, EventArgs e)
+        {
+            panelAdmin.Controls.Clear();
+            panelAdmin.Controls.Add(new Control_MyProfile(_korisnik));
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void btnAllUsers_Click(object sender, EventArgs e)
@@ -38,17 +47,6 @@ namespace Knjižnica.Forms
         {
             panelAdmin.Controls.Clear();
             panelAdmin.Controls.Add(new Control_EditBooks());
-        }
-
-        private void tsBtnProfil_Click(object sender, EventArgs e)
-        {
-            panelAdmin.Controls.Clear();
-            panelAdmin.Controls.Add(new Control_MyProfile(_korisnik));
-        }
-
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-          Application.Exit();
         }
     }
 }

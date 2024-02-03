@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace Knjižnica.Forms
@@ -31,13 +32,12 @@ namespace Knjižnica.Forms
         public void SakrijUsluge()
         {
             tsbtnMenu.Visible = false;
-            tsbtnProfil.Visible = false;
         }
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            AdminMenuForm adminMenuForm = new AdminMenuForm(_korisnik);
-            adminMenuForm.ShowDialog();
+            panelGlavni.Controls.Clear();
+            panelGlavni.Controls.Add(new Control_AdminDefault(_korisnik));
         }
 
         private void tsbtnSignOut_Click(object sender, EventArgs e)

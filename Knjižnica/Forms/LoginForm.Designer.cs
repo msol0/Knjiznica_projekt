@@ -42,24 +42,28 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(245, 183);
+            this.txtEmail.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtEmail.Location = new System.Drawing.Point(252, 193);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(229, 22);
-            this.txtEmail.TabIndex = 16;
+            this.txtEmail.Size = new System.Drawing.Size(229, 30);
+            this.txtEmail.TabIndex = 2;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(245, 249);
+            this.txtPassword.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtPassword.Location = new System.Drawing.Point(252, 259);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(229, 22);
-            this.txtPassword.TabIndex = 17;
+            this.txtPassword.Size = new System.Drawing.Size(229, 30);
+            this.txtPassword.TabIndex = 3;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(245, 118);
+            this.txtUsername.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtUsername.Location = new System.Drawing.Point(252, 129);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(229, 22);
-            this.txtUsername.TabIndex = 15;
+            this.txtUsername.Size = new System.Drawing.Size(229, 30);
+            this.txtUsername.TabIndex = 1;
             // 
             // btnCancel
             // 
@@ -69,7 +73,7 @@
             this.btnCancel.Location = new System.Drawing.Point(835, 12);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 35);
-            this.btnCancel.TabIndex = 14;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Izlaz";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -82,7 +86,7 @@
             this.btnLogin.Location = new System.Drawing.Point(433, 340);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(81, 35);
-            this.btnLogin.TabIndex = 13;
+            this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Prijava";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -91,7 +95,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Arial Unicode MS", 12F);
-            this.lblEmail.Location = new System.Drawing.Point(59, 178);
+            this.lblEmail.Location = new System.Drawing.Point(66, 194);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(74, 26);
             this.lblEmail.TabIndex = 12;
@@ -101,7 +105,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Arial Unicode MS", 12F);
-            this.lblPassword.Location = new System.Drawing.Point(59, 244);
+            this.lblPassword.Location = new System.Drawing.Point(66, 260);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(86, 26);
             this.lblPassword.TabIndex = 11;
@@ -111,7 +115,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Arial Unicode MS", 12F);
-            this.lblUsername.Location = new System.Drawing.Point(59, 114);
+            this.lblUsername.Location = new System.Drawing.Point(66, 130);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(147, 26);
             this.lblUsername.TabIndex = 10;
@@ -120,6 +124,7 @@
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
+            this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
             this.lblWelcome.Font = new System.Drawing.Font("Monotype Corsiva", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblWelcome.Location = new System.Drawing.Point(267, 31);
@@ -136,7 +141,7 @@
             this.BackColor = System.Drawing.Color.OldLace;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(945, 489);
+            this.ClientSize = new System.Drawing.Size(947, 554);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -149,7 +154,7 @@
             this.DoubleBuffered = true;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginForm";
+            this.Text = "Knjižnica - login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

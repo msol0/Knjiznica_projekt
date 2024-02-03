@@ -40,7 +40,7 @@
             this.btnReturnBook.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnReturnBook.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold);
             this.btnReturnBook.ForeColor = System.Drawing.Color.White;
-            this.btnReturnBook.Location = new System.Drawing.Point(690, 340);
+            this.btnReturnBook.Location = new System.Drawing.Point(748, 450);
             this.btnReturnBook.Name = "btnReturnBook";
             this.btnReturnBook.Size = new System.Drawing.Size(99, 32);
             this.btnReturnBook.TabIndex = 12;
@@ -54,20 +54,21 @@
             this.lblMyReservation.Font = new System.Drawing.Font("Arial Narrow", 15F);
             this.lblMyReservation.Location = new System.Drawing.Point(30, 11);
             this.lblMyReservation.Name = "lblMyReservation";
-            this.lblMyReservation.Size = new System.Drawing.Size(165, 30);
+            this.lblMyReservation.Size = new System.Drawing.Size(159, 30);
             this.lblMyReservation.TabIndex = 11;
-            this.lblMyReservation.Text = "Moje rezervacije:";
+            this.lblMyReservation.Text = "Moje rezervacije";
             // 
             // dgReservations
             // 
-            this.dgReservations.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgReservations.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgReservations.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgReservations.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgReservations.BackgroundColor = System.Drawing.Color.OldLace;
             this.dgReservations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgReservations.Location = new System.Drawing.Point(35, 65);
             this.dgReservations.Name = "dgReservations";
             this.dgReservations.RowHeadersWidth = 51;
             this.dgReservations.RowTemplate.Height = 24;
-            this.dgReservations.Size = new System.Drawing.Size(806, 269);
+            this.dgReservations.Size = new System.Drawing.Size(879, 364);
             this.dgReservations.TabIndex = 10;
             // 
             // Control_MyReservations
@@ -79,7 +80,7 @@
             this.Controls.Add(this.lblMyReservation);
             this.Controls.Add(this.dgReservations);
             this.Name = "Control_MyReservations";
-            this.Size = new System.Drawing.Size(871, 385);
+            this.Size = new System.Drawing.Size(1009, 536);
             ((System.ComponentModel.ISupportInitialize)(this.dgReservations)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

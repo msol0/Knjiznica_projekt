@@ -40,11 +40,11 @@
             this.dgKnjige.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgKnjige.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgKnjige.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgKnjige.Location = new System.Drawing.Point(39, 66);
+            this.dgKnjige.Location = new System.Drawing.Point(29, 66);
             this.dgKnjige.Name = "dgKnjige";
             this.dgKnjige.RowHeadersWidth = 51;
             this.dgKnjige.RowTemplate.Height = 24;
-            this.dgKnjige.Size = new System.Drawing.Size(712, 380);
+            this.dgKnjige.Size = new System.Drawing.Size(740, 404);
             this.dgKnjige.TabIndex = 0;
             // 
             // btnAdd
@@ -53,7 +53,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.Lime;
             this.btnAdd.Font = new System.Drawing.Font("Arial Narrow", 11F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.Location = new System.Drawing.Point(39, 13);
+            this.btnAdd.Location = new System.Drawing.Point(29, 13);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(113, 33);
             this.btnAdd.TabIndex = 1;
@@ -81,7 +81,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnDelete.Font = new System.Drawing.Font("Arial Narrow", 11F, System.Drawing.FontStyle.Bold);
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDelete.Location = new System.Drawing.Point(625, 13);
+            this.btnDelete.Location = new System.Drawing.Point(634, 13);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(114, 33);
             this.btnDelete.TabIndex = 3;
@@ -99,7 +99,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgKnjige);
             this.Name = "Control_EditBooks";
-            this.Size = new System.Drawing.Size(792, 467);
+            this.Size = new System.Drawing.Size(807, 498);
             ((System.ComponentModel.ISupportInitialize)(this.dgKnjige)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

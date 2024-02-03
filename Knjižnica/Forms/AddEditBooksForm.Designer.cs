@@ -88,18 +88,20 @@
             // 
             // txtIzdavac
             // 
-            this.txtIzdavac.Location = new System.Drawing.Point(217, 185);
+            this.txtIzdavac.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtIzdavac.Location = new System.Drawing.Point(217, 177);
             this.txtIzdavac.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIzdavac.Name = "txtIzdavac";
-            this.txtIzdavac.Size = new System.Drawing.Size(221, 22);
+            this.txtIzdavac.Size = new System.Drawing.Size(221, 30);
             this.txtIzdavac.TabIndex = 4;
             // 
             // txtMjestoIzdanja
             // 
-            this.txtMjestoIzdanja.Location = new System.Drawing.Point(217, 135);
+            this.txtMjestoIzdanja.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtMjestoIzdanja.Location = new System.Drawing.Point(217, 127);
             this.txtMjestoIzdanja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMjestoIzdanja.Name = "txtMjestoIzdanja";
-            this.txtMjestoIzdanja.Size = new System.Drawing.Size(221, 22);
+            this.txtMjestoIzdanja.Size = new System.Drawing.Size(221, 30);
             this.txtMjestoIzdanja.TabIndex = 3;
             // 
             // lblIzdavac
@@ -126,10 +128,11 @@
             // 
             // txtAutor
             // 
-            this.txtAutor.Location = new System.Drawing.Point(217, 84);
+            this.txtAutor.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtAutor.Location = new System.Drawing.Point(217, 76);
             this.txtAutor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAutor.Name = "txtAutor";
-            this.txtAutor.Size = new System.Drawing.Size(221, 22);
+            this.txtAutor.Size = new System.Drawing.Size(221, 30);
             this.txtAutor.TabIndex = 2;
             // 
             // lblNaslov
@@ -156,10 +159,11 @@
             // 
             // txtNaslov
             // 
-            this.txtNaslov.Location = new System.Drawing.Point(217, 38);
+            this.txtNaslov.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtNaslov.Location = new System.Drawing.Point(217, 29);
             this.txtNaslov.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNaslov.Name = "txtNaslov";
-            this.txtNaslov.Size = new System.Drawing.Size(221, 22);
+            this.txtNaslov.Size = new System.Drawing.Size(221, 30);
             this.txtNaslov.TabIndex = 1;
             // 
             // lblJezik
@@ -176,7 +180,7 @@
             // 
             this.lblKategorija.AutoSize = true;
             this.lblKategorija.Font = new System.Drawing.Font("Arial Narrow", 13F);
-            this.lblKategorija.Location = new System.Drawing.Point(53, 277);
+            this.lblKategorija.Location = new System.Drawing.Point(53, 273);
             this.lblKategorija.Name = "lblKategorija";
             this.lblKategorija.Size = new System.Drawing.Size(98, 26);
             this.lblKategorija.TabIndex = 44;
@@ -214,45 +218,50 @@
             // 
             // cbJezik
             // 
+            this.cbJezik.Font = new System.Drawing.Font("Arial Narrow", 11.5F);
             this.cbJezik.FormattingEnabled = true;
-            this.cbJezik.Location = new System.Drawing.Point(217, 228);
+            this.cbJezik.Location = new System.Drawing.Point(217, 222);
             this.cbJezik.Name = "cbJezik";
-            this.cbJezik.Size = new System.Drawing.Size(221, 24);
+            this.cbJezik.Size = new System.Drawing.Size(221, 31);
             this.cbJezik.TabIndex = 5;
             // 
             // cbKategorija
             // 
+            this.cbKategorija.Font = new System.Drawing.Font("Arial Narrow", 11.5F);
             this.cbKategorija.FormattingEnabled = true;
-            this.cbKategorija.Location = new System.Drawing.Point(217, 277);
+            this.cbKategorija.Location = new System.Drawing.Point(217, 268);
             this.cbKategorija.Name = "cbKategorija";
-            this.cbKategorija.Size = new System.Drawing.Size(221, 24);
+            this.cbKategorija.Size = new System.Drawing.Size(221, 31);
             this.cbKategorija.TabIndex = 6;
             // 
             // cbGradja
             // 
+            this.cbGradja.Font = new System.Drawing.Font("Arial Narrow", 11.5F);
             this.cbGradja.FormattingEnabled = true;
-            this.cbGradja.Location = new System.Drawing.Point(217, 318);
+            this.cbGradja.Location = new System.Drawing.Point(217, 313);
             this.cbGradja.Name = "cbGradja";
-            this.cbGradja.Size = new System.Drawing.Size(221, 24);
+            this.cbGradja.Size = new System.Drawing.Size(221, 31);
             this.cbGradja.TabIndex = 7;
             // 
             // numKolicina
             // 
-            this.numKolicina.Location = new System.Drawing.Point(217, 364);
+            this.numKolicina.Font = new System.Drawing.Font("Arial Narrow", 10F);
+            this.numKolicina.Location = new System.Drawing.Point(217, 359);
             this.numKolicina.Name = "numKolicina";
-            this.numKolicina.Size = new System.Drawing.Size(52, 22);
+            this.numKolicina.Size = new System.Drawing.Size(52, 27);
             this.numKolicina.TabIndex = 48;
             // 
             // numDostupnost
             // 
-            this.numDostupnost.Location = new System.Drawing.Point(217, 409);
+            this.numDostupnost.Font = new System.Drawing.Font("Arial Narrow", 10F);
+            this.numDostupnost.Location = new System.Drawing.Point(217, 405);
             this.numDostupnost.Maximum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.numDostupnost.Name = "numDostupnost";
-            this.numDostupnost.Size = new System.Drawing.Size(52, 22);
+            this.numDostupnost.Size = new System.Drawing.Size(52, 27);
             this.numDostupnost.TabIndex = 49;
             // 
             // AddEditBooksForm
